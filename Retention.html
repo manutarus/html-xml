@@ -1,0 +1,1074 @@
+<html>
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/muzima.css" rel="stylesheet">
+    <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/muzima.js"></script>
+    <title>Behavioral Assessment</title>
+</head>
+<body class="col-md-8 col-md-offset-2">
+<div id="pre_populate_data"></div>
+<form id="retention_form" name="retention_form">
+<h2 class="text-center">RETENTION Behavioral Assessment</h2>
+<div class="section">
+    <h3>Demographics</h3>
+    <div class="form-group">
+        <input class="form-control" id="patient.uuid"
+               name="patient.uuid" type="hidden" readonly="readonly">
+    </div>
+    <div class="form-group">
+        <label for="patient.medical_record_number">AMRS ID Number:</label>
+        <input class="form-control" id="patient.medical_record_number"
+               name="patient.medical_record_number" type="text"
+               readonly="readonly">
+    </div>
+    <div class="form-group">
+        <label for="patient.family_name">Family Name:</label>
+        <input class="form-control" id="patient.family_name"
+               name="patient.family_name" type="text" readonly="readonly">
+    </div>
+    <div class="form-group">
+        <label for="patient.given_name">Given Name:</label>
+        <input class="form-control" id="patient.given_name"
+               name="patient.given_name" type="text" readonly="readonly">
+    </div>
+    <div class="form-group">
+        <label for="patient.middle_name">Middle Name:</label>
+        <input class="form-control" id="patient.middle_name"
+               name="patient.middle_name" type="text" readonly="readonly">
+    </div>
+    <div class="form-group">
+        <label for="patient.sex">Gender:</label>
+        <select class="form-control" id="patient.sex" name="patient.sex" readonly="readonly">
+            <option value="">...</option>
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="patient.birthdate">Date Of Birth:</label>
+        <input class="form-control" id="patient.birthdate"
+               name="patient.birthdate" type="text" readonly="readonly">
+    </div>
+</div>
+<div class="section">
+    <h3>Encounter Details</h3>
+    <div class="form-group">
+        <label for="encounter.location_id">Encounter Location <span class="required">*</span></label>
+        <select class="form-control" id="encounter.location_id" name="encounter.location_id" required="required">
+            <option>...</option>
+            <option value="2">Mosoriot</option>
+            <option value="3">Turbo</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="encounter.provider_id">CHV Ampath ID Number <span class="required">*</span></label>
+        <select class="form-control" id="encounter.provider_id" name="encounter.provider_id" required="required">
+            <option>...</option>
+            <option value="4-2">Josephine Kisato</option>
+            <option value="4-2">Catherine Chiliswa</option>
+            <option value="4-2">Derek Levembe</option>
+            <option value="4-2">Daniel Malakwen</option>
+            <option value="4-2">Jackson Rotich</option>
+            <option value="4-2">Penina Kiptoo</option>
+            <option value="4-2">Kennedy Kirwa</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="encounter.encounter_datetime">Encounter Date:<span class="required">*</span>
+        </label>
+        <input class="form-control datepicker nonFutureDate" id="encounter.encounter_datetime"
+               name="encounter.encounter_datetime" type="text" readonly="readonly"
+               required="required">
+    </div>
+    <div class="form-group">
+        <input class="form-control" id="encounter.form_uuid"
+               name="encounter.form_uuid" type="hidden" required="required">
+    </div>
+</div>
+<div class="section">
+    <h3><div style="text-align: center;">SECTION II</div><p>Part A: General</h3>
+    <div class="place_for_health_care_detailed" id="obs.place_for_health_care_detailed"
+         data-counter="1" data-concept="9087^FACILITY TYPE, DETAILED^99DCT"
+         data-name="obs.place_for_health_care_detailed">
+        <div class="form-group">
+            <label for="obs.place_for_health_care">
+                Where do you usually go for health care?<span class="required">*</span>
+            </label>
+            <select class="form-control specifyOther" id="obs.place_for_health_care" name="obs.place_for_health_care"
+                    data-concept="9086^FACILITY TYPE^99DCT" required="required">
+                <option value="">...</option>
+                <option value="6436^DISPENSARY^99DCT">Dispensary</option>
+                <option value="1275^HEALTH CENTRE HOSPITALS^99DCT">Health Center</option>
+                <option value="6437^DISTRICT HOSPITAL^99DCT">District</option>
+                <option value="1863^PRIVATE CLINIC^99DCT">Private Clinic</option>
+                <option value="1860^TRADITIONAL HEALER^99DCT">TRADITIONAL HEALER</option>
+                <option value="9088^NEVER BEEN TO A HEALTH FACILITY^99DCT">Never been to a health facility</option>
+                <option value="5622^OTHER NON-CODED^99DCT">Other</option>
+            </select>
+        </div>
+        <div class="form-group freetext">
+            <label for="obs.place_for_health_care.freetext_general">Specify<span class="required">*</span></label>
+            <input class="form-control specifyOther" id="obs.place_for_health_care.freetext_general"
+                   name="obs.place_for_health_care.freetext_general" type="text" required="required"
+                   data-concept="1915^FREETEXT GENERAL^99DCT">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            When you go to your usual health facility, how do you generally get there? <span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.means_to_usual_health_facility" name="obs.means_to_usual_health_facility"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="6415^WALKINGY^99DCT">Foot</option>
+            <option value="6395^BICYCLE^99DCT">Bicycle</option>
+            <option value="6396^MOTORCYCLE^99DCT">Boda</option>
+            <option value="6416^MATATU^99DCT">Matatu</option>
+            <option value="6471^PRIVATE CAR^99DCT">Private car</option>
+            <option value="9088^NEVER BEEN TO A HEALTH FACILITY^99DCT">Never been to a health facility</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="obs.how_long_to_facility">
+            On average, how long does it take you to get to the facility? <span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.how_long_to_facility" name="obs.how_long_to_facility"
+                data-concept="5605^CLINIC TRAVEL TIME^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1049^LESS THAN 30 MINUTES^99DCT">Less than 30 Mins</option>
+            <option value="1050^30 TO 60 MINUTES^99DCT">30 to 60 Mins</option>
+            <option value="1051^ONE TO TWO HOURS^99DCT">1 to 2 hrs</option>
+            <option value="8884^TWO TO THREE HOURS^99DCT">2 to 3 hrs</option>
+            <option value="8885^THREE TO FOUR HOURS^99DCT">3 to 4 hrs</option>
+            <option value="8886^MORE THAN FOUR HOURS^99DCT">More than4 hrs</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="obs.rate_personal_manner">
+            How would you rate the personal manner(courtesy, respect,sensitivity, friendliness, and attitude) of the health care provider you see <span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.rate_personal_manner" name="obs.rate_personal_manner"
+                data-concept="9089^HEALTH CARE PROVIDER RATING, PERSONAL MANNERISM^99DCT" required="required">
+            <option value="">...</option>
+            <option value="6343^GOOD^99DCT">Good</option>
+            <option value="6655^FAIR^99DCT">Fair</option>
+            <option value="6344^BAD^99DCT">Poor</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="obs.rate_health_manner">
+            How would you rate the health care provider's explanation of your high blood pressure and the treatment you need<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.rate_health_manner" name="obs.rate_health_manne"
+                data-concept="9090^HEALTH CARE PROVIDER RATING, EXPLANATION AND TREATMENT^99DCT" required="required">
+            <option value="">...</option>
+            <option value="6343^GOOD^99DCT">Good</option>
+            <option value="6655^FAIR^99DCT">Fair</option>
+            <option value="6344^BAD^99DCT">Poor</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="obs.rate_follow-up_manner">
+            How would you rate the follow-up by your health care provider<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.rate_follow-up_manner" name="obs.rate_follow-up_manner"
+                data-concept="9091^HEALTH CARE PROVIDER RATING, FOLLOW UP^99DCT" required="required">
+            <option value="">...</option>
+            <option value="6343^GOOD^99DCT">Good</option>
+            <option value="6655^FAIR^99DCT">Fair</option>
+            <option value="6344^BAD^99DCT">Poor</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <hr>
+    <h4><p>Part B: Perceived Risks/Severity</h4>
+    <hr>
+    <div>
+        <div class="form-group">
+            <label for="obs.told_having_hypertension">
+                Have you ever been told by a health care provider that you might have high blood pressure or hypertension <span class="required">*</span>
+            </label>
+            <select class="form-control yesSelect noSelect" id="obs.told_having_hypertension" name="obs.told_having_hypertension"
+                    data-concept="9092^PREVIOUS FINDING, HIGH BLOOD PRESSURE^99DCT" required="required">
+                <option value="">...</option>
+                <option value="1065^YES^99DCT">Yes</option>
+                <option value="1066^NO^99DCT">No</option>
+                <option value="1958^REFUSAL^99DCT">Refused</option>
+            </select>
+        </div>
+        <div class="form-group yesSectionToShow combinationOneSelect">
+            <label for="obs.having_hypertension">
+                Do you believe that you have high blood pressure <span class="required">*</span>
+            </label>
+            <select class="form-control" id="obs.having_hypertension" name="obs.having_hypertension"
+                    data-concept="9092^PATIENT REPORTED HIGH BLOOD PRESSURE^99DCT" required="required">
+                <option value="">...</option>
+                <option value="1065^YES^99DCT">Yes</option>
+                <option value="1066^NO^99DCT">No</option>
+                <option value="1958^REFUSAL^99DCT">Refused</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="obs.perception_of_bp">
+                What is your perception of high blood pressure <span class="required">*</span>
+            </label>
+            <select class="form-control" id="obs.perception_of_bp" name="obs.perception_of_bp"
+                    data-concept="9097^PERCEPTION OF HIGH BLOOD PRESSURE^99DCT" required="required">
+                <option value="">...</option>
+                <option value="9094^VERY SERIOUS^99DCT">Very serious</option>
+                <option value="9095^SERIOUS^99DCT">Serious</option>
+                <option value="9096^NOT SERIOUS^99DCT">Not that serious</option>
+                <option value="1958^REFUSAL^99DCT">Refused</option>
+            </select>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="section">
+<h3><div style="text-align: center;">Have you ever been told that you need to do any of the following</div> </h3>
+
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Come to the clinic regularly to monitor your blood pressure <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.regularly_monitor_pb" name="obs.regularly_monitor_pb"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Take medication to manage your high blood pressure <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.high_blood_medication" name="obs.high_blood_medication"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Control your weight <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.control_your_weight" name="obs.control_your_weight"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Reduce your salt intake <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.reduce_your_salt_intake" name="obs.reduce_your_salt_intake"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Exercise more <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.exercise_more" name="obs.exercise_more"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Reduce your alcohol use <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.reduce_your_alcohol_use" name="obs.reduce_your_alcohol_use"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Stop smoking or use of tobacco <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.smoking_tobacco" name="obs.smoking_tobacco"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Are you currently taking medication to manage your high blood pressure <span class="required">*</span>
+    </label>
+    <select class="form-control yesSelect noSelect" id="obs.taking_medication" name="obs.taking_medication"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+
+<div class="form-group yesSectionToShow">
+    <label for="obs.place_for_health_care">
+        Where did you get your medication?<span class="required">*</span>
+    </label>
+    <select class="form-control specifyOther" id="obs.taking_medication_place" name="obs.taking_medication_place"
+            data-concept="9086^FACILITY TYPE^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Chemist Shop</option>
+        <option value="6395^BICYCLE^99DCT">From a peer friend</option>
+        <option value="6396^MOTORCYCLE^99DCT">Health center</option>
+        <option value="6396^MOTORCYCLE^99DCT">Traditional herbalists</option>
+        <option value="5622^OTHER NON-CODED^99DCT">Other</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group freetext">
+    <label for="obs.taking_medication_place.freetext_general">Specify<span class="required">*</span></label>
+    <input class="form-control specifyOther" id="obs.taking_medication_place.freetext_general"
+           name="obs.taking_medication_place.freetext_general" type="text" required="required"
+           data-concept="1915^FREETEXT GENERAL^99DCT">
+</div>
+
+
+
+
+<h3><div style="text-align: center;">Are you currently...........</div> </h3>
+
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Controlling your weight <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.controling_your_weight" name="obs.controling_your_weight"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Reducing your salt intake <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.reducing_your_salt_intake" name="obs.reducing_your_salt_intake"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Exercising more (E.g. Digging, running etc.) <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.exercising_more" name="obs.exercising_more"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Reducing your alcohol use <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.reducing_your_alcohol_use" name="obs.reducing_your_alcohol_use"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Reducing or stopping your tobacco use <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.smokingR_tobacco" name="obs.smokingR_tobacco"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Is your blood pressure controlled at the level your health care provider wants it to be <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_controlled" name="obs.blood_pressure_controlled"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Yes</option>
+        <option value="6395^BICYCLE^99DCT">No</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Can you tell when your blood pressure is going up or down without a blood pressure measurement by noticing how you feel <span class="required">*</span>
+    </label>
+    <select class="form-control yesSelect noSelect" id="obs.blood_pressure_sense" name="obs.blood_pressure_sense"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group yesSectionToShow">
+    <label for="obs.means_to_usual_health_facility">
+        How can you tell if your blood pressure is going up or down? <br>
+        Because you feel <span class="required">*</span>
+    </label>
+    <select class="form-control specifyOther" id="obs.blood_pressure_sense_feel" name="obs.blood_pressure_sense_feel"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="6415^WALKINGY^99DCT">Angry/irritable</option>
+        <option value="6395^BICYCLE^99DCT">Tense/nervous</option>
+        <option value="6396^MOTORCYCLE^99DCT">Fast /palpitations/heart pounding</option>
+        <option value="6396^MOTORCYCLE^99DCT">Headache/head throbbing</option>
+        <option value="6396^MOTORCYCLE^99DCT">Fatigue/weakness</option>
+        <option value="6396^MOTORCYCLE^99DCT">Shortness of breath</option>
+        <option value="6396^MOTORCYCLE^99DCT">Chest pain</option>
+        <option value="6396^MOTORCYCLE^99DCT">Dizziness</option>
+        <option value="6396^MOTORCYCLE^99DCT">Dizziness</option>
+        <option value="5622^OTHER NON-CODED^99DCT">Other (Please specify)</option>
+        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
+    </select>
+</div>
+<div class="form-group freetext">
+    <label for="obs.blood_pressure_sense_feel.freetext_general">Specify<span class="required">*</span></label>
+    <input class="form-control specifyOther" id="obs.blood_pressure_sense_feel.freetext_general"
+           name="obs.blood_pressure_sense_feel.freetext_general" type="text" required="required"
+           data-concept="1915^FREETEXT GENERAL^99DCT">
+</div>
+
+<h3><div style="text-align: center;">Sometimes we have trouble doing what the health care provider says. Have you ever…</div> </h3>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Missed your blood pressure appointment because you felt well? <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_missed" name="obs.blood_pressure_missed"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Missed taking your blood pressure drugs when you were feeling better <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_better" name="obs.blood_pressure_better"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<h3><div style="text-align: center;">If you have high blood pressure and you don’t seek care, do you think you are at risk of…
+</div> </h3>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Having a stroke <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_stroke" name="obs.blood_pressure_stroke"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Developing kidney failure <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_kidney" name="obs.blood_pressure_kidney"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Developing heart disease <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_heartD" name="obs.blood_pressure_heartD"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<h3><div style="text-align: center;">Have you delayed or not sought care for your high blood pressure for any of the following reasons:
+</div> </h3>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You lacked fare for transport <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_transport" name="obs.blood_pressure_transport"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You lacked the mode of transportation? <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_mode" name="obs.blood_pressure_mode"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You lacked money to pay for the medical procedure fee and blood pressure drugs <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_money" name="obs.blood_pressure_money"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You thought it was more important to spend your money on school fees, food, or farm inputs <span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_school" name="obs.blood_pressure_school"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Limited services at the health facility<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_serv" name="obs.blood_pressure_serv"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Long queues at the health facility<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_facility" name="obs.blood_pressure_facility"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        Corruption (taking bribes, Favoritism in queues, denial of service) at the health facility<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_bribes" name="obs.blood_pressure_bribes"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You don't think continuing care makes a difference<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_care" name="obs.blood_pressure_care"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You didn't have time/You could not take time off from the responsibilities you have<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_time" name="obs.blood_pressure_time"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You preferred traditional herbal medicine<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_traditional" name="obs.blood_pressure_traditional"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You received medication from your friend or family member<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_medication" name="obs.blood_pressure_medication"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You bought your own medication from the chemist/shop<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_bought" name="obs.blood_pressure_bought"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        You believe your faith will heal you<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_faith" name="obs.blood_pressure_faith"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+<div class="form-group">
+    <label for="obs.means_to_usual_health_facility">
+        It is burdensome to take blood pressure drugs every day<span class="required">*</span>
+    </label>
+    <select class="form-control" id="obs.blood_pressure_burdensome" name="obs.blood_pressure_burdensome"
+            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+        <option value="">...</option>
+        <option value="1065^YES^99DCT">Yes</option>
+        <option value="1066^NO^99DCT">No</option>
+        <option value="1958^REFUSAL^99DCT">Refused</option>
+    </select>
+</div>
+
+</div>
+<div class="section">
+    <h3>Part D: Emotional Factors</h3>
+    <h3><div style="text-align: center;">Have you delayed or discontinued care for your blood pressure in the last three months because you are…</div> </h3>
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            Afraid of the stigma associated with high blood pressure<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.blood_pressure_stigma" name="obs.blood_pressure_stigma"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            Afraid of being seen at the AMPATH facility because of possible HIV stigma<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.blood_pressure_AMPATH" name="obs.blood_pressure_AMPATH"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            Afraid of taking high blood pressure drugs<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.blood_pressure_Afraid" name="obs.blood_pressure_Afraid"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            Have you ever been treated rudely/shouted by your health care provider?<span class="required">*</span>
+        </label>
+        <select class="form-control yesSelect noSelect" id="obs.blood_pressure_treated" name="obs.blood_pressure_treated"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group yesSectionToShow">
+        <label for="obs.means_to_usual_health_facility">
+            For which of the following reasons were you harassed by your health care provider? (Select all that apply)<span class="required">*</span>
+        </label>
+        <select class="form-control specifyOther" id="obs.blood_pressure_reasons" name="obs.blood_pressure_reasons"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Being late</option>
+            <option value="1066^NO^99DCT">Not taking medications</option>
+            <option value="1958^REFUSAL^99DCT">Not showing up for appointment</option>
+            <option value="5622^OTHER NON-CODED^99DCT">Other (Please specify)</option>
+            <option value="1958^REFUSAL^99DCT">Refused/No Answer</option>
+        </select>
+    </div>
+    <div class="form-group freetext">
+        <label for="obs.blood_pressure_reasons.freetext_general">Specify<span class="required">*</span></label>
+        <input class="form-control specifyOther" id="obs.blood_pressure_reasons.freetext_general"
+               name="obs.blood_pressure_sense_feel.freetext_general" type="text" required="required"
+               data-concept="1915^FREETEXT GENERAL^99DCT">
+    </div>
+
+</div>
+<div class="section">
+    <h2>Part E: Motivation</h2>
+
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            What factors encourage you to seek health care? (Please do not read the options aloud to the patient; select only those that the patient mentions on her own accord)<span class="required">*</span>
+        </label>
+        <select class="form-control specifyOther" id="obs.encourage" name="obs.encourage"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Improved health</option>
+            <option value="1066^NO^99DCT">Response to medications</option>
+            <option value="1958^REFUSAL^99DCT">High blood pressure being a manageable disease</option>
+            <option value="1958^REFUSAL^99DCT">Follow-up by CHWs</option>
+            <option value="1958^REFUSAL^99DCT">Friendliness of the health facility staff</option>
+            <option value="1958^REFUSAL^99DCT">Family and/or peer support/encouragement</option>
+            <option value="1958^REFUSAL^99DCT">None</option>
+            <option value="5622^OTHER NON-CODED^99DCT">Other (Please specify)</option>
+            <option value="1958^REFUSAL^99DCT">Refused/No Answer</option>
+        </select>
+    </div>
+    <div class="form-group freetext">
+        <label for="obs.encourage.freetext_general">Specify<span class="required">*</span></label>
+        <input class="form-control specifyOther" id="obs.encourage.freetext_general"
+               name="obs.blood_pressure_sense_feel.freetext_general" type="text" required="required"
+               data-concept="1915^FREETEXT GENERAL^99DCT">
+    </div>
+
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            How confident are you that you will go back into care and seek blood pressure care consistently?<span class="required">*</span>
+        </label>
+        <select class="form-control yesSelect noSelect" id="obs.blood_pressure_confident" name="obs.blood_pressure_confident"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Very confident</option>
+            <option value="1065^YES^99DCT">Somewhat confident</option>
+            <option value="1066^NO^99DCT">Not very confident</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group yesSectionToShow">
+        <label for="obs.means_to_usual_health_facility">
+            Do you have a specific plan for how to do so?<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.blood_pressure_specific" name="obs.blood_pressure_specific"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            How sure are you that you will be able to follow instructions provided by your health care provider, such as taking your medications?<span class="required">*</span>
+        </label>
+        <select class="form-control yesSelect noSelect" id="obs.blood_pressure_instructions" name="obs.blood_pressure_instructions"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Very sure</option>
+            <option value="1065^YES^99DCT">Somewhat sure</option>
+            <option value="1066^NO^99DCT">Not very sure</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group yesSectionToShow">
+        <label for="obs.means_to_usual_health_facility">
+            Have you thought of a specific way to do that?<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.blood_pressure_thought" name="obs.blood_pressure_thought"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="obs.means_to_usual_health_facility">
+            How confident are you that you will be able to modify your lifestyle, such as exercising more, eating healthy, and controlling your weight?<span class="required">*</span>
+        </label>
+        <select class="form-control yesSelect noSelect" id="obs.blood_pressure_modify" name="obs.blood_pressure_modify"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Very confident</option>
+            <option value="1065^YES^99DCT">Somewhat confident</option>
+            <option value="1066^NO^99DCT">Not very confident</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+    <div class="form-group yesSectionToShow">
+        <label for="obs.means_to_usual_health_facility">
+            Have you thought of a specific way to do that?<span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.blood_pressure_specificWay" name="obs.blood_pressure_specificWay"
+                data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1065^YES^99DCT">Yes</option>
+            <option value="1066^NO^99DCT">No</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
+    </div>
+
+
+
+</div>
+
+
+
+<div class="section">
+
+    <h4>Based on the combination of participant responses, the following messages are recommended to be shown. You can choose which ones to show:</h4>
+    <!--<input class="btn video-player" id="vidOne" data-video = "/lark/vids/v1.mp4" type="button" value="play video"/>-->
+
+    <label class="alert alert-info" id="message1">
+        What is high blood pressure?
+        <ol>
+            High blood pressure is a condition of the heart and blood.  When blood pressure is persistently and abnormally high, doctors call this condition 'hypertension'.
+            <br>High blood pressure does not always cause noticeable symptoms, but it can be a very serious disease. It can result in other serious diseases, such as heart attack, stroke, and kidney disease if not well managed.
+        </ol>
+        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/img/message1.jpg" type="button" value="show image"/>
+    </label>
+
+    <label class="alert alert-info" id="message2">
+        What Causes Hypertension?  <br>
+        Many different things can cause high blood pressure. Most commonly, it is caused by:<br>
+        <span style="text-decoration: underline;">1. Lifestyle</span>
+        <ol type="I">
+            <li>Eating a diet high in oil, fat and salt (such as a lot red meat or fried foods)</li>
+            <li>Being overweight,</li>
+            <li>Not doing exercise or physical activity,</li>
+            <li>Using tobacco or smoking, and </li>
+            <li>Drinking too much alcohol.</li>
+        </ol>
+        <span style="text-decoration: underline;">2. Hereditary factors.</span>
+        <ul>
+            <li>High blood pressure runs in the immediate family.</li>
+        </ul>
+
+        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/img/message2.jpg" type="button" value="show image"/>
+    </label> <br>
+
+    <label class="alert alert-info" id="message3">
+        <span style="text-decoration: underline;">Signs and Symptoms of Hypertension</span>  <br>
+        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/vids/message3.mp4" type="button" value="show vedio"/>
+    </label>
+
+</div>
+
+
+</form>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#save_draft').click(function () {
+            $(this).prop('disabled', true);
+            document.saveDraft();
+            $(this).prop('disabled', false);
+        });
+
+        $('#submit_form').click(function () {
+            $(this).prop('disabled', true);
+            document.submit();
+            $(this).prop('disabled', false);
+        });
+
+        $('#retention_form').validate({
+            rules: {
+                weight_kg: {
+                    number: true,
+                    range: [0, 250]
+                },
+                height_cm: {
+                    number: true,
+                    range: [10, 228]
+                }
+            },
+            submitHandler: function (form) {
+                $('#result').html(JSON.stringify($('form').serializeEncounterForm(), undefined, 2));
+            }
+        });
+
+        var locationName = [
+            {"val": "7", "label": "Chulaimbo"},
+            {"val": "3", "label": "Turbo"},
+            {"val": "17", "label": "Iten"}
+        ];
+        $('#encounter\\.location_id').autocomplete({
+            source: locationName,
+            create: function (event, ui) {
+                var location_val = $('input[name="encounter\\.location_id"]').val();
+                $.each(locationName, function (i, elem) {
+                    if (elem.val == location_val) {
+                        $('#encounter\\.location_id').val(elem.label)
+                    }
+                    ;
+                });
+            },
+            select: function (event, ui) {
+                $('input[name="encounter\\.location_id"]').val(ui.item.val);
+                $('#encounter\\.location_id').val(ui.item.label);
+                return false;
+            }
+        });
+
+        //pick todays date by default
+        var dateFormat = "dd-mm-yy";
+        var currentDate = $.datepicker.formatDate(dateFormat, new Date());
+        var encounterDatetime = $('#encounter\\.encounter_datetime');
+        if ($(encounterDatetime).val() == "") {
+            $(encounterDatetime).val(currentDate);
+        }
+        //Ask to specify when other is select
+        var $specifyOther = $('.specifyOther');
+        $specifyOther.change(function () {
+            var $freetext = $(this).closest('.section').find('.freetext');
+            var divToShowVal = $(this).val();
+            if (divToShowVal  == '5622^OTHER NON-CODED^99DCT' ) {
+                $freetext.show();
+            } else {
+                $freetext.hide();
+            }
+        });
+        $specifyOther.trigger('change');
+
+        //Display when YES is selected
+        var $yesSelect = $('.yesSelect');
+        $yesSelect.change(function () {
+            var $yesSectionToShow = $(this).closest('.section').find('.yesSectionToShow');
+            var divToShowVal = $(this).val();
+            if (divToShowVal  == '1065^YES^99DCT' ) {
+                $yesSectionToShow.show();
+            } else {
+                $yesSectionToShow.hide();
+            }
+        });
+        $yesSelect.trigger('change');
+
+        //Display when NO is selected
+        var $noSelect = $('.noSelect');
+        $noSelect.change(function () {
+            var $noSectionToShow = $(this).closest('.section').find('.noSectionToShow');
+            var divToShowVal = $(this).val();
+            if (divToShowVal  == '1066^NO^99DCT' ) {
+                $noSectionToShow.show();
+            } else {
+                $noSectionToShow.hide();
+            }
+        });
+        $noSelect.trigger('change');
+
+        //Display when YES is NOT selected
+        var $NotYesSelect = $('.NotYesSelect');
+        $NotYesSelect.change(function () {
+            var $notYesSectionToShow = $(this).closest('.section').find('.notYesSectionToShow');
+            var divToShowVal = $(this).val();
+            if (divToShowVal  == '1065^YES^99DCT' || divToShowVal != '') {
+                $notYesSectionToShow.show();
+            } else {
+                $notYesSectionToShow.hide();
+            }
+        });
+        $NotYesSelect.trigger('change');
+        var $having_hypertension = $('#obs\\.having_hypertension');
+        //CombinationOne display message 1,2 & 3.
+        var combinationOne = function () {
+            var having_hypertension = $having_hypertension.val();
+            if (having_hypertension == '1065^YES^99DCT' || having_hypertension == '')
+            {
+                $('#message1').hide();
+                $('#message2').hide();
+                $('#message3').hide();
+            } else {
+                $('#message1').show();
+                $('#message2').show();
+                $('#message3').show();
+            }
+        };combinationOne();
+        $having_hypertension.change(function () {
+            combinationOne();
+        });$having_hypertension.trigger('change');
+
+    });
+</script>
+</html>

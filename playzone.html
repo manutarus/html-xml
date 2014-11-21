@@ -1,6 +1,5 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/muzima.css" rel="stylesheet">
     <link href="css/ui-darkness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
@@ -11,7 +10,7 @@
     <script src="js/muzima.js"></script>
     <title>Costing Form</title>
 </head>
-<body class="col-md-8 col-md-offset-2">
+<body class="col-md-10 col-md-offset-1">
 <div id="pre_populate_data"></div>
 <form id="costing_form" name="costing_form">
 <h2 class="text-center">Costing Form</h2>
@@ -70,17 +69,13 @@
         <label for="encounter.provider_id">Provider ID <span class="required">*</span></label>
         <select class="form-control" id="encounter.provider_id" name="encounter.provider_id" required="required">
             <option>...</option>
-            <option value="3-4">Keviner Chavera</option>
-            <option value="3-4">Josephine Kisato</option>
-            <option value="3-4">Catherine Chiliswa</option>
-            <option value="3-4">Derek Levembe</option>
-            <option value="3-4">Daniel Malakwen</option>
-            <option value="3-4">Jackson Rotich</option>
-            <option value="3-4">Penina Kiptoo</option>
-            <option value="3-4">Kennedy Lagat</option>
-            <option value="3-4">Jemima	Kamano</option>
-            <option value="3-4">Abraham	Kimaru</option>
-            <option value="3-4">Rajesh	Vendanthan</option>
+            <option value="4-2">Josephine Kisato</option>
+            <option value="4-2">Catherine Chiliswa</option>
+            <option value="4-2">Derek Levembe</option>
+            <option value="4-2">Daniel Malakwen</option>
+            <option value="4-2">Jackson Rotich</option>
+            <option value="4-2">Penina Kiptoo</option>
+            <option value="4-2">Kennedy Kirwa</option>
         </select>
     </div>
     <div class="form-group">
@@ -89,19 +84,6 @@
         <input class="form-control datepicker nonFutureDate" id="encounter.encounter_datetime"
                name="encounter.encounter_datetime" type="text" readonly="readonly"
                required="required">
-    </div>
-    <div class="form-group">
-        <label for="obs.enrollment_strategy">Select Enrollment Strategy:<span class="required">*</span></label>
-        <select class="form-control" id="obs.enrollment_strategy" name="obs.enrollment_strategy"
-                data-concept="9176^ENROLLMENT STRATEGY^99DCT" required="required">
-            <option value="">...</option>
-            <option value="1">Baraza</option>
-            <option value="2">Newly identified PHCT</option>
-            <option value="3">Previously identified PHCT-not linked</option>
-            <option value="4">Previously identified PHCT-not retained</option>
-            <option value="5">Health Facility</option>
-            <option value="6">Identified by CHW</option>
-        </select>
     </div>
     <div class="form-group">
         <input class="form-control" id="encounter.form_uuid"
@@ -183,20 +165,6 @@
                type="number" placeholder="Size of house hold" data-concept="9087^HOUSEHOLD SIZE^99DCT" required="required">
     </div>
 
-    <div class="form-group">
-        <label for="obs.told_having_hp">
-            During the past 12 months have you been told by a doctor or other health worker that you have raised blood pressure or hypertension? <span class="required">*</span>
-        </label>
-        <select class="form-control" id="obs.told_having_hp" name="obs.told_having_hp"
-                data-concept="9181^TOLD HAVING BLOOD PRESSURE IN 12 MONTHS^99DCT" required="required">
-            <option value="">...</option>
-            <option value="1065^YES^99DCT">Yes</option>
-            <option value="1066^NO^99DCT">No</option>
-            <option value="1624^DO NOT KNOW^99DCT">Don&#39;t Know</option>
-            <option value="1958^REFUSAL^99DCT">Refused</option>
-        </select>
-    </div>
-
 </div>
 
 
@@ -218,211 +186,204 @@
     </select>
 </div>
 <div class="admission_in_past_12_months">
-<div class="form-group" >
-    <p>How many times were you admitted overnight to a hospital in the past 12 months?<span class="required">*</span> </p>
-    <input class="form-control" id="no_admission_in_past_12_months" name="obs.no_admission_in_past_12_months"
-           type="number" placeholder="Number of Admissions" data-concept="5704^NUMBER OF HOSPITALIZATIONS IN PAST YEAR^99DCT" required="required">
-</div>
-<div class="section cRepeat hospVisits" id="hospVisits" data-name="hospVisits">
-    <div class="alert alert-info" id="countVisits">Visit 1</div>
-    <p>
-    <div class="form-group">
-        <label for="obs.admission_injury_select">
-            Was the admission the result of an accident or injury? <span class="required">*</span>
-        </label>
-        <select class="form-control" id="obs.admission_injury_select" name="obs.admission_injury_select"
-                data-concept="9089^ADMISSION DUE TO INJURY^99DCT" required="required">
-            <option value="">...</option>
-            <option value="1065^YES^99DCT">Yes</option>
-            <option value="1066^NO^99DCT">No</option>
-            <option value="1624^DO NOT KNOW^99DCT">Don&#39;t Know</option>
-            <option value="1958^REFUSAL^99DCT">Refused</option>
-        </select>
+    <div class="form-group" >
+        <p>How many times were you admitted overnight to a hospital in the past 12 months?<span class="required">*</span> </p>
+        <input class="form-control" id="no_admission_in_past_12_months" name="obs.no_admission_in_past_12_months"
+               type="number" placeholder="Number of Admissions" data-concept="5704^NUMBER OF HOSPITALIZATIONS IN PAST YEAR^99DCT" required="required">
     </div>
-    <div class="form-group admission_disease_select">
-        <label for="obs.admission_disease_select">
-            was the admission the result of any specific disease e.g malaria, typhoid, hypertension etc? <span class="required">*</span>
-        </label>
-        <select class="form-control" id="obs.admission_disease_select" name="obs.admission_disease_select"
-                data-concept="9090^ADMISSION DUE TO DISEASE^99DCT" required="required">
-            <option value="">...</option>
-            <option value="1065^YES^99DCT">Yes</option>
-            <option value="1066^NO^99DCT">No</option>
-            <option value="1624^DO NOT KNOW^99DCT">Don&#39;t Know</option>
-            <option value="1958^REFUSAL^99DCT">Refused</option>
-        </select>
-    </div>
-    <div class="admission_disease_input">
-        <label>
-            What was/were the reason(s)/disease(s). <span class="required">*</span>
-        </label>
-        <div class="form-group repeat diseases" id="diseases" data-name="diseases">
-            <input class="form-control" id="obs.admission_disease" name="obs.admission_disease" type="text"
-                   data-concept="9091^ADMISSION DISEASE^99DCT">
+    <div class="section cRepeat hospVisits" id="hospVisits" data-name="hospVisits">
+        <div class="alert alert-info" id="countVisits">Visit 1</div>
+        <p>
+        <div class="form-group">
+            <label for="obs.admission_injury_select">
+                Was the admission the result of an accident or injury? <span class="required">*</span>
+            </label>
+            <select class="form-control" id="obs.admission_injury_select" name="obs.admission_injury_select"
+                    data-concept="9089^ADMISSION DUE TO INJURY^99DCT" required="required">
+                <option value="">...</option>
+                <option value="1065^YES^99DCT">Yes</option>
+                <option value="1066^NO^99DCT">No</option>
+                <option value="1624^DO NOT KNOW^99DCT">Don&#39;t Know</option>
+                <option value="1958^REFUSAL^99DCT">Refused</option>
+            </select>
         </div>
-    </div>
+        <div class="form-group admission_disease_select">
+            <label for="obs.admission_disease_select">
+                was the admission the result of any specific disease e.g malaria, typhoid, hypertension etc? <span class="required">*</span>
+            </label>
+            <select class="form-control" id="obs.admission_disease_select" name="obs.admission_disease_select"
+                    data-concept="9090^ADMISSION DUE TO DISEASE^99DCT" required="required">
+                <option value="">...</option>
+                <option value="1065^YES^99DCT">Yes</option>
+                <option value="1066^NO^99DCT">No</option>
+                <option value="1624^DO NOT KNOW^99DCT">Don&#39;t Know</option>
+                <option value="1958^REFUSAL^99DCT">Refused</option>
+            </select>
+        </div>
+        <div class="admission_disease_input">
+            <label>
+                What was/were the reason(s)/disease(s). <span class="required">*</span>
+            </label>
+            <div class="form-group repeat diseases" id="diseases" data-name="diseases">
+                <input class="form-control" id="obs.admission_disease" name="obs.admission_disease" type="text"
+                       data-concept="9091^ADMISSION DISEASE^99DCT">
+            </div>
+        </div>
 
-    <label>Did you pay for this admission using any of the following sources: Please list all that apply</label><br/>
-    <fieldset name="9092^SOURCE OF PAYMENT^99DCT">
-        <div class="form-group">
-            <label class="font-normal">
-                <input id="obs.source_of_payment_nhif" type="checkbox"
-                       data-concept="9092^SOURCE OF PAYMENT^99DCT" value="1">
-                NHIF
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="font-normal">
-                <input id="obs.source_of_payment_private" type="checkbox"
-                       data-concept="9092^SOURCE OF PAYMENT^99DCT" value="2">
-                Private Medical Insurance
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="font-normal">
-                <input id="obs.source_of_payment_pocket" type="checkbox"
-                       data-concept="9092^SOURCE OF PAYMENT^99DCT"
-                       value="3">
-                Out of pocket
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="font-normal">
-                <input id="obs.source_of_payment_loan" type="checkbox"
-                       data-concept="9092^SOURCE OF PAYMENT^99DCT" value="4">
-                Loan from Chama
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="font-normal">
-                <input id="obs.source_of_payment_waiver" type="checkbox"
-                       data-concept="9092^SOURCE OF PAYMENT^99DCT" value="5">
-                Waiver
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="font-normal">
-                <input id="obs.source_of_payment_donations" type="checkbox"
-                       data-concept="9092^SOURCE OF PAYMENT^99DCT" value="6">
-                Donations
-            </label>
-        </div>
-        <div class="form-group">
-            <label class="font-normal">
-                <input id="obs.source_of_payment_others" type="checkbox"
-                       data-concept="9092^SOURCE OF PAYMENT^99DCT" value="7">
-                Others
-            </label>
-        </div>
-        <div class="section">
-            <label class="alert alert-info">If selected will clear the applied above</label>
+        <label>Did you pay for this admission using any of the following sources: Please list all that apply</label><br/>
+        <fieldset name="9092^SOURCE OF PAYMENT^99DCT">
             <div class="form-group">
                 <label class="font-normal">
-                    <input id="obs.source_of_payment_dk" type="checkbox"
-                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="77">
-                    Don&#39;t Know
+                    <input id="obs.source_of_payment_nhif" type="checkbox"
+                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="1">
+                    NHIF
                 </label>
             </div>
             <div class="form-group">
                 <label class="font-normal">
-                    <input id="obs.source_of_payment_rf" type="checkbox"
-                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="99">
-                    Refused
+                    <input id="obs.source_of_payment_private" type="checkbox"
+                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="2">
+                    Private Medical Insurance
                 </label>
             </div>
+            <div class="form-group">
+                <label class="font-normal">
+                    <input id="obs.source_of_payment_pocket" type="checkbox"
+                           data-concept="9092^SOURCE OF PAYMENT^99DCT"
+                           value="3">
+                    Out of pocket
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">
+                    <input id="obs.source_of_payment_loan" type="checkbox"
+                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="4">
+                    Loan from Chama
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">
+                    <input id="obs.source_of_payment_waiver" type="checkbox"
+                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="5">
+                    Waiver
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">
+                    <input id="obs.source_of_payment_donations" type="checkbox"
+                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="6">
+                    Donations
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="font-normal">
+                    <input id="obs.source_of_payment_others" type="checkbox"
+                           data-concept="9092^SOURCE OF PAYMENT^99DCT" value="7">
+                    Others
+                </label>
+            </div>
+            <div class="section">
+                <label class="alert alert-info">If selected will clear the applied above</label>
+                <div class="form-group">
+                    <label class="font-normal">
+                        <input id="obs.source_of_payment_dk" type="checkbox"
+                               data-concept="9092^SOURCE OF PAYMENT^99DCT" value="77">
+                        Don&#39;t Know
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="font-normal">
+                        <input id="obs.source_of_payment_rf" type="checkbox"
+                               data-concept="9092^SOURCE OF PAYMENT^99DCT" value="99">
+                        Refused
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <label for="obs.medical_bill">How much was the total bill for the admission?<span class="required">*</span></label>
+            <input class="form-control" id="obs.medical_bill" name="obs.medical_bill" type="number"
+                   data-concept="9093^MEDICAL BILL^99DCT" required="required">
+            <label class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</label>
         </div>
-    </fieldset>
 
+        <div class="form-group">
+            <label for="obs.medical_bill_self_paid">How much did you pay using your own money including money from loans that you will need to pay back?<span class="required">*</span></label>
+            <input class="form-control" id="obs.medical_bill_self_paid" name="obs.medical_bill_self_paid" type="number"
+                   data-concept="9094^MEDICAL BILL PAID BY OWN MONEY^99DCT" required="required">
+            <label class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</label>
+        </div>
+    </div>
+
+    <p><label class="alert alert-info">During your last hospital admission</label> </p>
     <div class="form-group">
-        <label for="obs.medical_bill">How much was the total bill for the admission?<span class="required">*</span></label>
-        <input class="form-control" id="obs.medical_bill" name="obs.medical_bill" type="number"
-               data-concept="9093^MEDICAL BILL^99DCT" required="required">
-        <label class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</label>
+        <label for="obs.means_to_hosp">
+            What means of transport did you use to get to the hospital?  <span class="required">*</span>
+        </label>
+        <select class="form-control" id="obs.means_to_hosp" name="obs.means_to_hosp"
+                data-concept="9095^MEANS OF TRANSPORT TO HOSPITAL^99DCT" required="required">
+            <option value="">...</option>
+            <option value="6415^WALKING^99DCT">On foot</option>
+            <option value="6580^BODA-BODA^99DCT">Boda Boda</option>
+            <option value="6416^MATATU^99DCT">Matatu</option>
+            <option value="1958^REFUSAL^99DCT">Refused</option>
+        </select>
     </div>
 
     <div class="form-group">
-        <label for="obs.medical_bill_self_paid">How much did you pay using your own money including money from loans that you will need to pay back?<span class="required">*</span></label>
-        <input class="form-control" id="obs.medical_bill_self_paid" name="obs.medical_bill_self_paid" type="number"
-               data-concept="9094^MEDICAL BILL PAID BY OWN MONEY^99DCT" required="required">
-        <label class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</label>
+        <label for="obs.time_to_hospital_hours">
+            How much time did it take to reach the hospital? <span class="required">*</span>
+        </label> <p></p>
+        <label>Hours</label>
+        <select class="form-control" id="obs.time_to_hospital_hours" required="required">
+            <option value="">...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
     </div>
-</div>
-
-<p><div class="alert alert-info">During your last hospital admission</div> </p>
-<div class="form-group">
-    <label for="obs.means_to_hosp">
-        What means of transport did you use to get to the hospital?  <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.means_to_hosp" name="obs.means_to_hosp"
-            data-concept="9095^MEANS OF TRANSPORT TO HOSPITAL^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKING^99DCT">On foot</option>
-        <option value="6580^BODA-BODA^99DCT">Boda Boda</option>
-        <option value="6416^MATATU^99DCT">Matatu</option>
-        <option value="1958^REFUSAL^99DCT">Refused</option>
-    </select>
-</div>
-
-<div class="form-group">
-    <label for="obs.time_to_hospital_hours">
-        How much time did it take to reach the hospital? <span class="required">*</span>
-    </label> <p></p>
-    <label>Hours</label>
-    <select class="form-control" id="obs.time_to_hospital_hours" required="required">
-        <option value="">...</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-    </select>
-</div>
-<div class="form-group">
-    <label for="obs.time_to_hospital_mins"> </label>
-    <label>Minutes</label>
-    <select class="form-control" id="obs.time_to_hospital_mins">
-        <option value="">...</option>
-        <option value="0">0</option>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="25">25</option>
-        <option value="30">30</option>
-        <option value="35">35</option>
-        <option value="40">40</option>
-        <option value="45">45</option>
-        <option value="50">50</option>
-        <option value="55">55</option>
-    </select>
-</div>
-<div class="form-group" id="time_to_hospitalDR" data-name="time_to_hospitalDR">
-    <fieldset name="obs.time_to_hospitalDR">
-        <input id="time_to_hospital_DK" type="radio" name="time_to_hospitalDR" value="77">
-        <label for="time_to_hospital_DK">Don&#39;t</label> &nbsp;&nbsp;&nbsp;&nbsp;
-        <input id="time_to_hospital_RF" type="radio"  name="time_to_hospitalDR" value="99">
-        <label for="time_to_hospital_RF">Refused</label><br>
-    </fieldset>
-</div>
-<div class="form-group" id="time_to_hosp">
-    <input class="form-control" name="obs.time_to_hosp" id="obs.time_to_hosp" type="text" readonly data-concept="9133^NUMBER OF MINUTES TO REACH HOSPITAL^99DCT">
-</div>
-<div class="form-group">
-    <label for="obs.transport_cost_to_admission"> How much was the transport cost? <span class="required">*</span></label>
-    <input class="form-control" id="obs.transport_cost_to_admission" name="obs.transport_cost_to_admission"
-           type="number" placeholder="Transport cost" data-concept="9182^INPATIENT TRANSPORT COSTS^99DCT" required="required">
-</div>
-<div class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</div>
+    <div class="form-group">
+        <label for="obs.time_to_hospital_mins"> </label>
+        <label>Minutes</label>
+        <select class="form-control" id="obs.time_to_hospital_mins">
+            <option value="">...</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+        </select>
+    </div>
+    <div class="form-group" id="time_to_hospitalDR" data-name="time_to_hospitalDR">
+        <fieldset name="obs.time_to_hospitalDR">
+            <input id="time_to_hospital_DK" type="radio" name="time_to_hospitalDR" value="77">
+            <label for="time_to_hospital_DK">Don&#39;t</label> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input id="time_to_hospital_RF" type="radio"  name="time_to_hospitalDR" value="99">
+            <label for="time_to_hospital_RF">Refused</label><br>
+        </fieldset>
+    </div>
+    <div class="form-group">
+        <input class="form-control" name="obs.time_to_hosp" type="hidden" data-concept="9133^NUMBER OF MINUTES TO REACH HOSPITAL^99DCT">
+    </div>
 
 </div>
+
 
 </div>
 <div class="section">
@@ -517,6 +478,8 @@
             <div class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</div>
         </div>
     </div>
+
+
 </div>
 
 <input id="obs.medical_not_admitted_visits.Dispensary" type="checkbox" name="9097^HEALTH CARE PLACE VISITED^99DCT" value="Dispensary">
@@ -528,9 +491,7 @@
                data-concept="9135^NUMBER OF TIMES VISITED DISPENSARY IN 3 MONTHS^99DCT" required="required">
     </div>
     <div class="section eRepeat dispensaryVisits" id="dispensaryVisits" data-name="dispensaryVisits">
-
-        <div class="alert alert-info" id="displayDispVisitCount">Dispensary 1st visit</div>
-
+        <lebel class="alert alert-info" id="displayDispVisitCount">Dispensary 1st visit</lebel>
         <div class="form-group">
             <label for="obs.dispensary_injury_visit_select">
                 Was the dispensary visit the result of an accident or injury? <span class="required">*</span>
@@ -674,7 +635,7 @@
     Number of times you visited the chemist? <span class="required">*</span>
     <div class="form-group">
         <input class="form-control" id="chemist_visit_VC" name="obs.hospital_day_visit_VC" type="number"
-               data-concept="9185^NUMBER OF TIMES FOR CHEMIST IN 3 MONTHS^99DCT" required="required">
+               data-concept="9136^NUMBER OF TIMES FOR HOSPITAL DAY VISITS IN 3 MONTHS^99DCT" required="required">
     </div>
 
     <div class="section fRepeat chemistVisit" id="chemistVisit" data-name="chemistVisit">
@@ -823,8 +784,7 @@
 
 
 <div class="form-group means_of_medication_visit">
-    <div class="alert alert-info"><p></p>Now, thinking about  your LAST visit</div>
-    <br>
+    <label class="alert alert-info"><p></p>Now, thinking about  your LAST visit<br></label>
     <label for="obs.means_to_hosp">
         What means of transport did you use to get there?<span class="required">*</span>
     </label>
@@ -837,14 +797,14 @@
         <option value="1958^REFUSAL^99DCT">Refused</option>
     </select>
 </div>
-<div class="section form-group time_to_medication_place" id="time_to_medication_place_main">
-    <label for="time_to_medication_place_main">
+<div class="section form-group time_to_medication_place" id="time_to_medication_place">
+    <label for="time_to_medication_place">
         How much time did it take to reach there? <span class="required">*</span>
     </label> <p></p>
     <label>Hours</label>
-    <select class="form-control" id="obs.time_to_medication_place_hours" name="obs.time_to_medication_place_hours" required="required">
+    <select class="form-control" id="obs.time_to_medication_place_hours" name="obs.time_to_medication_place_hours"
+            data-concept="9124^TIME TAKEN TO MEDICATION PLACE^99DCT" required="required">
         <option value="">...</option>
-        <option value="0">0</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -860,7 +820,6 @@
     </select>
     <label>Minutes</label>
     <select  name="obs.time_to_medication_place_mins" class="form-control" id="obs.time_to_medication_place_mins">
-        <option value="">...</option>
         <option value="0">0</option>
         <option value="5">5</option>
         <option value="10">10</option>
@@ -882,17 +841,7 @@
             <label for="obs.time_to_medication_place_RF">Refused</label><br>
         </fieldset>
     </div>
-    <div class="form-group">
-        <input class="form-control" name="obs.time_to_medication_place" id="obs.time_to_medication_place" readonly data-concept="9188^TIME TAKEN TO NON INPATIENT SERVICES^99DCT">
-    </div>
-
 </div>
-<div class="form-group">
-    <label for="obs.transport_cost_to_op"> How much was the transport cost? <span class="required">*</span></label>
-    <input class="form-control" id="obs.transport_cost_to_op" name="obs.transport_cost_to_op"
-           type="number" placeholder="Transport cost" data-concept="9183^OUT7PATIENT TRANSPORT COST^99DCT" required="required">
-</div>
-<div class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</div>
 </div>
 </div>
 <div class="section">
@@ -913,10 +862,10 @@
     <div class="visited_herbalist">
         <div class="form-group">
             <p>In the past three months how many times did you visit?<span class="required">*</span> </p>
-            <input class="form-control" id="times_visited_herbalist_in_3months" name="obs.times_visited_herbalist_in_3months"
+            <input class="form-control" id="obs.times_visited_herbalist_in_3months" name="obs.times_visited_herbalist_in_3months"
                    type="number" placeholder="Number of visits" data-concept="9127^NUMBER OF TIMES VISITED HERBALIST IN 3 MONTHS^99DCT" required="required">
         </div>
-        <div class="section herbalRepeat herbalistVisits" id="herbalistVisits" data-name="herbalistVisits">
+        <div class="section cRepeat herbalistVisits" id="herbalistVisits" data-name="herbalistVisits">
             <label class="alert alert-info" id="countHerbalistVisits">Herbalist visit 1</label>
             <div class="form-group">
                 <label for="obs.admission_injury_select">
@@ -974,69 +923,32 @@
             <div class="form-group herbalist_visit_bill">
                 <label for="obs.medical_bill"> How much did you pay out of pocket for the visit, including the cost of any medications or other interventions?<span class="required">*</span></label>
                 <input class="form-control" id="obs.herbalist_visit_bill" name="obs.medical_bill" type="number"
-                       data-concept="9187^HERBAL MEDICAL BILL^99DCT" required="required">
+                       data-concept="9093^MEDICAL BILL^99DCT" required="required">
                 <label class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</label>
             </div>
             <p><div class="alert alert-info">Now, thinking about your LAST visit:</div> </p>
-
-            <div data-concept="9181^MEANS OF TRANSPORT TO HERBALIST,DETAILED^99DCT">
-                <h4>What means of transport did you use to get there?</h4>
-                <div class="form-group">
-                    <label class="font-normal">
-                        <input class="singleSelect" id="obs.means_to_herbalist_foot" type="checkbox"
-                               data-concept="9131^MEANS OF TRANSPORT TO HERBALIST^99DCT"
-                               value="6415^WALKING^99DC">
-                        On foot
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label class="font-normal">
-                        <input class="singleSelect" id="obs.means_to_herbalist_boda" type="checkbox"
-                               data-concept="9131^MEANS OF TRANSPORT TO HERBALIST^99DCT"
-                               value="6580^BODA-BODA^99DCT">
-                        Boda Boda
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label class="font-normal">
-                        <input class="singleSelect" id="obs.means_to_herbalist_matatu" type="checkbox"
-                               data-concept="9131^MEANS OF TRANSPORT TO HERBALIST^99DCT"
-                               value="6416^MATATU^99DCT">
-                        Matatu
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label class="font-normal">
-                        <input class="singleSelect" id="obs.means_to_herbalist_refused" type="checkbox"
-                               data-concept="9131^MEANS OF TRANSPORT TO HERBALIST^99DCT"
-                               value="1958^REFUSAL^99DCT">
-                        Refused
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label class="font-normal">
-                        <input class="has-other singleSelect" id="obs.means_to_herbalist_other_non_coded" type="checkbox"
-                               data-concept="9131^MEANS OF TRANSPORT TO HERBALIST^99DCT"
-                               value="1958^REFUSAL^99DCT">
-                        Other
-                    </label>
-                </div>
-                <div class="form-group freetext">
-                    <label for="obs.means_to_herbalist_freetext_general">Specify<span class="required">*</span></label>
-                    <input class="form-control" id="obs.means_to_herbalist_freetext_general"
-                           name="obs.means_to_herbalist_freetext_general" type="text" required="required"
-                           data-concept="1915^FREETEXT GENERAL^99DCT">
-                </div>
+            <div class="form-group means_to_hosp">
+                <label for="obs.means_to_hosp">
+                    What means of transport did you use to get there?   <span class="required">*</span>
+                </label>
+                <select class="form-control" id="obs.means_to_herbalist" name="obs.obs.means_to_herbalist"
+                        data-concept="9131^MEANS OF TRANSPORT TO HERBALIST^99DCT" required="required">
+                    <option value="">...</option>
+                    <option value="6415^WALKING^99DCT">On foot</option>
+                    <option value="6580^BODA-BODA^99DCT">Boda Boda</option>
+                    <option value="6416^MATATU^99DCT">Matatu</option>
+                    <option value="1958^REFUSAL^99DCT">Refused</option>
+                </select>
             </div>
+
             <div class="section form-group time_to_herbalist" id="time_to_herbalist">
                 <label for="time_to_herbalist">
                     How much time did it take to reach there? <span class="required">*</span>
                 </label> <p></p>
                 <label>Hours</label>
-                <select class="form-control" id="obs.time_to_herbalist_hours" name="obs.time_to_herbalist_hours">
+                <select class="form-control" id="obs.time_to_herbalist_hours" name="obs.time_to_herbalist_hours"
+                        data-concept="8117^NUMBER OF MINUTES^99DCT" required="required">
                     <option value="">...</option>
-                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -1053,7 +965,6 @@
                 <label>Minutes</label>
                 <select  name="obs.time_to_herbalist_mins" class="form-control" id="obs.time_to_herbalist_mins">
                     <option value="">...</option>
-                    <option value="0">0</option>
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
@@ -1077,16 +988,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
-                <input class="form-control" name="obs.time_to_herbalist" id="obs.time_to_herbalist" readonly data-concept="9180^TIME TAKEN TO HERBALIST^99DCT">
-            </div>
 
-            <div class="form-group">
-                <label for="obs.transport_cost_to_herbal"> How much was the transport cost?<span class="required">*</span></label>
-                <input class="form-control" id="obs.transport_cost_to_herbal" name="obs.transport_cost_to_herbal"
-                       type="number" placeholder="Transport cost" data-concept="9184^HERBAL TRANSPORT COST^99DCT" required="required">
-            </div>
-            <div class="alert alert-info">Enter 77 for Don&#39;t Know or 99 for Refused</div>
 
         </div>
 
@@ -1123,7 +1025,7 @@
                 <lebal for="obs.private_clinic_visit_select">
                     What is the name of the medicine? <span class="required">*</span>
                 </lebal>
-                <input class="form-control" id="obs.name_of_meds" name="obs.name_of_meds" type="text"
+                <input class="form-control" id="obs.name_of_meds" name="obs.name_of_meds" type="number"
                        data-concept="9140^MEDICATION TAKEN^99DCT" required="required">
             </div>
             <lebal>
@@ -1183,7 +1085,7 @@
             Have you ever used your NHIF insurance to pay for health services?<span class="required">*</span>
         </label>
         <select class="form-control" id="obs.used_nhif" name="obs.used_nhif"
-                data-concept="9144^USED NHIF^99DCT" required="required">
+                data-concept="9143^HAVING NHIF^99DCT" required="required">
             <option value="">...</option>
             <option value="1065^YES^99DCT">Yes</option>
             <option value="1066^NO^99DCT">No</option>
@@ -1197,7 +1099,7 @@
             Are you currently covered by any other health insurance apart from NHIF?<span class="required">*</span>
         </label>
         <select class="form-control" id="obs.other_insurance" name="obs.other_insurance"
-                data-concept="9145^HAVING OTHER INSURANCE NOT NHIF^99DCT" required="required">
+                data-concept="9143^HAVING NHIF^99DCT" required="required">
             <option value="">...</option>
             <option value="1065^YES^99DCT">Yes</option>
             <option value="1066^NO^99DCT">No</option>
@@ -1285,7 +1187,7 @@
         </fieldset>
     </div>
     <div class="form-group">
-        <input class="form-control" name="obs.time_doing_vigorous_physical"  id="obs.time_doing_vigorous_physical" type="number"  readonly
+        <input class="form-control" name="obs.time_doing_vigorous_physical"  id="obs.time_doing_vigorous_physical" type="hidden"
                data-concept="9150^NUMBER OF MINUTES DOING VIGOROUS ACTIVITIES^99DCT">
     </div>
 
@@ -1357,16 +1259,9 @@
         </fieldset>
     </div>
     <div class="form-group">
-        <input class="form-control" name="obs.time_doing_moderate_physical"  id="obs.time_doing_moderate_physical" type="number" readonly
+        <input class="form-control" name="obs.time_doing_moderate_physical"  id="obs.time_doing_moderate_physical" type="hidden"
                data-concept="9149^NUMBER OF MINUTES DOING MODERATE ACTIVITIES^99DCT">
     </div>
-</div>
-<div class="form-group">
-    <label for="obs.days_eaten_fruit">
-        For the last one month, how many grams of salt did you purchase? <span class="required">*</span>
-    </label>
-    <input class="form-control" name="obs.salt_purchased"  id="obs.salt_purchased" type="number"
-           data-concept="9151^GRAMS OF SALT PURCHASED LAST MONTH^99DCT">
 </div>
 <div class="form-group">
     <label for="obs.days_eaten_fruit">
@@ -1419,8 +1314,6 @@
         <option value="3">3 days</option>
         <option value="4">4 days</option>
         <option value="5">5 days</option>
-        <option value="6">6 days</option>
-        <option value="7">7 days</option>
         <option value="77">Don&#39;t</option>
         <option value="99">refused</option>
     </select>
@@ -1479,10 +1372,10 @@
                 data-concept="9157^CIGARETTES SMOKED EACH DAY^99DCT" required="required">
             <option value="">...</option>
             <option value="0">None</option>
-            <option value="1">Less or equal to 10</option>
+            <option value="1">More than 10</option>
             <option value="2">Between 11-20</option>
             <option value="3">Between 21-30</option>
-            <option value="4">More or equal to 31</option>
+            <option value="4">More than 31</option>
         </select>
     </div>
 
@@ -1524,9 +1417,9 @@
             In a typical week, how many servings of alcohol dou you consume? <span class="required">*</span>
         </label>
         <select class="form-control" id="obs.alcohol_taken_each_day" name="obs.alcohol_taken_each_day"
-                data-concept="9186^SERVINGS OF ALCOHOL CONSUMED IN A WEEK^99DCT" required="required">
+                data-concept="9157^CIGARETTES SMOKED EACH DAY^99DCT" required="required">
             <option value="">...</option>
-            <option value="1">Less than 5</option>
+            <option value="1">More than 5</option>
             <option value="2">Between 6-10</option>
             <option value="3">Between 11-15</option>
             <option value="4">More than16</option>
@@ -1612,12 +1505,34 @@
 
     <div class="form-group">
         <label for="obs.health_status">
-            Provide a number based on the scale<span class="required">*</span>
+            please select the number you based on the scale<span class="required">*</span>
         </label>
-        <input class="form-control" name="obs.health_status"  id="obs.health_status" type="number"
-               data-concept="9165^HEALTH STATUS^99DCT" required="required">
+        <select class="form-control" id="obs.health_status" name="obs.health_status"
+                data-concept="9165^HEALTH STATUS^99DCT" required="required">
+            <option value="">...</option>
+            <option value="0">0</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+            <option value="60">60</option>
+            <option value="65">65</option>
+            <option value="70">70</option>
+            <option value="75">75</option>
+            <option value="80">80</option>
+            <option value="85">85</option>
+            <option value="90">90</option>
+            <option value="95">95</option>
+            <option value="100">100</option>
+        </select>
     </div>
-
 </div>
 <div class="section" >
     <h3>SECTION I- WORK PRODUCTIVITY</h3>
@@ -1747,9 +1662,51 @@
         <label for="hours_attended_work">
             During the past 7 days, how many hours did you work? <span class="required">*</span>
         </label> <p></p>
-        <input class="form-control" name="obs.hours_attended_work"  id="obs.hours_attended_work" type="number"
-               data-concept="9174^NUMBER OF HOURS WORKED IN 7 DAYS^99DCT" required="required">  </p>
+        <label>Hours</label>
+        <select class="form-control" id="obs.hours_attended_work_hours" required="required">
+            <option value="">...</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <label>Minutes</label>
+        <select class="form-control" id="obs.hours_attended_work_mins">
+            <option value="">...</option>
+            <option value="0">0</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+        </select>
+        <div class="form-group" id="hours_attended_workDR" data-name="hours_attended_workDR">
+            <fieldset name="obs.hours_attended_workDR">
+                <input id="hours_attended_work_DK" type="radio" name="hours_attended_workDR" value="77">
+                <label for="hours_attended_work_DK">Don&#39;t</label> &nbsp;&nbsp;&nbsp;&nbsp;
+                <input id="hours_attended_work_RF" type="radio"  name="hours_attended_workDR" value="99">
+                <label for="hours_attended_work_RF">Refused</label><br>
+            </fieldset>
+        </div>
+        <input class="form-control" name="obs.hours_attended_work"  id="obs.hours_attended_work" type="hidden"
+               data-concept="9174^NUMBER OF HOURS WORKED IN 7 DAYS^99DCT">
     </div>
+
 </div>
 <div class="section">
     <h3>PHYSICAL MEASUREMENTS</h3>
@@ -1769,26 +1726,31 @@
         <input class="form-control" id="obs.hip_circumference" name="obs.number_of_years_smoking"
                type="number" placeholder="Centimeters" data-concept="9175^HIP CIRCUMFERENCE^99DCT">
     </div>
-</div>
-<div class="section">
-    <h3>BLOOD PRESSURE READINGS</h3>
-    <div class="form-group">
-        <label for="obs.systolic_blood_pressure">Systolic Blood Pressure (mmHg):</label>
-        <input class="form-control systolicBloodPressure" id="obs.systolic_blood_pressure"
-               name="obs.systolic_blood_pressure" type="number"
-               placeholder="Please record today's SBP" data-concept="5085^SYSTOLIC BLOOD PRESSURE^99DCT">
-    </div>
-    <div class="form-group">
-        <label for="obs.diastolic_blood_pressure">Diastolic Blood Pressure (mmHg):</label>
-        <input class="form-control diastolicBloodPressure lessThankSystolic" id="obs.diastolic_blood_pressure"
-               name="obs.diastolic_blood_pressure" type="number"
-               placeholder="Please record today's DBP" data-concept="5086^DIASTOLIC BLOOD PRESSURE^99DCT">
-    </div>
 
+
+    <div class="form-group">
+        <label for="obs.enrollment_strategy">Select Enrollment Strategy:<span class="required">*</span></label>
+        <select class="form-control" id="obs.enrollment_strategy" name="obs.enrollment_strategy"
+                data-concept="9176^ENROLLMENT STRATEGY^99DCT" required="required">
+            <option value="">...</option>
+            <option value="1">Baraza</option>
+            <option value="2">Newly identified PHCT</option>
+            <option value="3">Previously identified PHCT-not linked</option>
+            <option value="4">Previously identified PHCT-not retained</option>
+            <option value="5">Health Facility</option>
+            <option value="6">Identified by CHW</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group text-center">
+    <input class="btn btn-primary" id="save_draft" type="button" value="Save"/>
+    <input class="btn btn-primary" id="submit_form" type="button" value="Submit"/>
 </div>
 </form>
 </body>
 <script type="text/javascript">
+
 $(document).ready(function () {
 
     $('#save_draft').click(function () {
@@ -1818,56 +1780,12 @@ $(document).ready(function () {
             $('#result').html(JSON.stringify($('form').serializeEncounterForm(), undefined, 2));
         }
     });
-    var $hasOther = $('.has-other');
-    $hasOther.change(function () {
-        var $freetext = $(this).closest('.section').find('.freetext');
-        if ($(this).is(':checkbox')) {
-            if ($(this).is(':checked')) {
-                $freetext.show();
-            } else {
-                $freetext.hide();
-            }
-        }
-    });
-    $hasOther.trigger('change');
 
-
-    /* compute time to hospital in minutes */
-    var $weight = $('#weight_kg');
-    var $height = $('#height_cm');
-    var $bodyMassIndex = $('.bodyMassIndex');
-    var displayBMI = function () {
-        var $bmiReminder = $('#bmiReminder');
-        if (($weight.val() != '') && ($height.val() != '')) {
-            $bodyMassIndex.find('input').val(computeBMI());
-            $bodyMassIndex.show();
-            if(computeBMI()>25){
-                $bmiReminder.show();
-            }
-            else{
-                $bmiReminder.hide();
-            }
-        } else {
-            $bodyMassIndex.hide();
-            $bmiReminder.hide();
-        }
-    };
-    var computeBMI = function () {
-        var weight = parseInt($weight.val());
-        var height = parseInt($height.val()) / 100;
-        return (weight / (height * height)).toFixed(2);
-    };
-
-    $weight.change(displayBMI);
-    $weight.trigger('change');
-
-    $height.change(displayBMI);
-    $height.trigger('change');
 
 
 
     var admissionNo = function (selectedElement) {
-        var divField = $("select[name='obs.admitted_select']");
+        var divField = $("select[name='obs\\.admitted_select']");
         $.each(divField, function (index, object) {
             $(object).change(function () {
                 var divToShowVal = $(this).val();
@@ -1900,7 +1818,7 @@ $(document).ready(function () {
             var $repeatedSections = $("." + _id);
             var suffixInt=0;
             $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
+                var idnr = $(repeatedSection).attr("data-name").match(/\d+$/);
                 if (parseInt(idnr) > parseInt(suffixInt)){
                     suffixInt= idnr;
                 }
@@ -1976,9 +1894,6 @@ $(document).ready(function () {
         });
     };
     admissionDue();
-    $('input.singleSelect').on('change', function() {
-        $('input.singleSelect').not(this).prop('checked', false);
-    });
 
     //uncheck all other if don't know or refused is selected
     $('#obs\\.source_of_payment_rf').on('change', function() {
@@ -2022,9 +1937,9 @@ $(document).ready(function () {
                 $("#time_to_hospital_DK").prop('checked', false);
                 $("#time_to_hospital_RF").prop('checked', false);
                 if($("#obs\\.time_to_hospital_hours").val() >0){
-                    $('#obs\\.time_to_hosp').val($("#obs\\.time_to_hospital_hours").val()*60);
+                    $('input[name="obs.time_to_hosp"]').attr('value',($("#obs\\.time_to_hospital_hours").val()*60));
                     if($("#obs\\.time_to_hospital_mins").val()>0){
-                        $('#obs\\.time_to_hosp').val(($("#obs\\.time_to_hospital_hours").val()*60)+ (parseInt($("#obs\\.time_to_hospital_mins").val())));
+                        $('input[name="obs\\.time_to_hosp"]').attr('value',($("#obs\\.time_to_hospital_hours").val()*60)+($("#obs\\.time_to_hospital_mins").val()));
                     }
                 }
             });
@@ -2040,9 +1955,9 @@ $(document).ready(function () {
                 $("#time_to_hospital_DK").prop('checked', false);
                 $("#time_to_hospital_RF").prop('checked', false);
                 if($("#obs\\.time_to_hospital_mins").val() >0){
-                    $('#obs\\.time_to_hosp').val(parseInt($("#obs\\.time_to_hospital_mins").val()));
+                    $('input[name="obs.time_to_hosp"]').attr('value',($("#obs\\.time_to_hospital_mins").val()*60));
                     if($("#obs\\.time_to_hospital_hours").val()>0){
-                        $('#obs\\.time_to_hosp').val(($("#obs\\.time_to_hospital_hours").val()*60)+ (parseInt($("#obs\\.time_to_hospital_mins").val())));
+                        $('input[name="obs\\.time_to_hosp"]').attr('value',($("#obs\\.time_to_hospital_hours").val()*60)+($("#obs\\.time_to_hospital_mins").val()));
                     }
                 }
             });
@@ -2053,12 +1968,12 @@ $(document).ready(function () {
     //hide show time
     var resetTimeToHosp = function () {
         if($("#time_to_hospital_DK").is(':checked')|| $("#time_to_hospital_RF").is(':checked')) {
-            $("#obs\\.time_to_hospital_hours").get(0).selectedIndex = 1;
-            $("#obs\\.time_to_hospital_mins").get(0).selectedIndex = 1;
+            $("#obs\\.time_to_hospital_hours").get(0).selectedIndex = 0;
+            $("#obs\\.time_to_hospital_mins").get(0).selectedIndex = 0;
             if($("#time_to_hospital_DK").is(':checked')){
-                $('#obs\\.time_to_hosp').val(77);
+                $('input[name="obs\\.time_to_hosp"]').attr('value',77);
             } else{
-                $('#obs\\.time_to_hosp').val(99);
+                $('input[name="obs\\.time_to_hosp"]').attr('value',99);
             }
 
         }
@@ -2095,9 +2010,9 @@ $(document).ready(function () {
             .append("<p></p><input class='btn btn-primary add_sectionVisitHC pull-left' type='button' value='Next visit'/>")
             .append("<input class='btn btn-primary remove_sectionVisitHC pull-right' type='button' value='Remove visit'/><span class='clear'></span>");
     var $visitHitHC = $('#visit_Health_center_VC');
-    var visitHitHcCount = 1;
     $(document.body).on('click', '.add_sectionVisitHC', function () {
         var no_of_visit = parseFloat($visitHitHC.val());
+        var visitHitHcCount = 1;
         if(visitHitHcCount < no_of_visit) {
             visitHitHcCount = visitHitHcCount +1;
             var $clonedSection = $(this).parent().clone(true).insertAfter($(this).parent());
@@ -2109,7 +2024,7 @@ $(document).ready(function () {
             var $repeatedSections = $("." + _id);
             var suffixInt=0;
             $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
+                var idnr = $(repeatedSection).attr("data-name").match(/\d+$/);
                 if (parseInt(idnr) > parseInt(suffixInt)){
                     suffixInt= idnr;
                 }
@@ -2134,54 +2049,6 @@ $(document).ready(function () {
         if ($("." + _id).length > 1) {
             $parent.remove();
             visitHitHcCount = visitHitHcCount - 1;
-        }
-    });
-
-
-
-    $('.herbalRepeat')
-            .append("<p></p><input class='btn btn-primary add_sectionVisitherbal pull-left' type='button' value='Next visit'/>")
-            .append("<input class='btn btn-primary remove_sectionVisitherbal  pull-right' type='button' value='Remove visit'/><span class='clear'></span>");
-    var $visitHitherbal = $('#times_visited_herbalist_in_3months');
-    var visitHitherbalCount = 1;
-    $(document.body).on('click', '.add_sectionVisitherbal', function () {
-        var no_of_visit = parseFloat($visitHitherbal.val());
-        if(visitHitherbalCount < no_of_visit) {
-            visitHitherbalCount = visitHitherbalCount +1;
-            var $clonedSection = $(this).parent().clone(true).insertAfter($(this).parent());
-            var parentName = $clonedSection.attr("id");
-            $clonedSection.find('#countHerbalistVisits').html('');
-            $clonedSection.find('#countHerbalistVisits').append("Herbalist Visits " + visitHitherbalCount +" of " + no_of_visit);
-            /* Get largest suffix so far */
-            var _id = $(this).parent().attr('id');
-            var $repeatedSections = $("." + _id);
-            var suffixInt=0;
-            $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
-                if (parseInt(idnr) > parseInt(suffixInt)){
-                    suffixInt= idnr;
-                }
-            });
-            if ( parseInt(suffixInt) == 0){
-                parentName += "1";
-            } else {
-                parentName +=  parseInt(suffixInt)+1;
-            }
-            $clonedSection.attr("data-name", parentName);
-
-            /* clear values on cloned fields */
-            $clonedSection.find(':input:not(:button)').val('');
-            $clonedSection.find(':input:not(:button)').trigger('change');
-
-        }
-
-    });
-    $(document.body).on('click', '.remove_sectionVisitherbal', function () {
-        var $parent = $(this).parent();
-        var _id = $parent.attr('id');
-        if ($("." + _id).length > 1) {
-            $parent.remove();
-            visitHitherbalCount = visitHitherbalCount - 1;
         }
     });
 
@@ -2273,7 +2140,7 @@ $(document).ready(function () {
             var $repeatedSections = $("." + _id);
             var suffixInt=0;
             $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
+                var idnr = $(repeatedSection).attr("data-name").match(/\d+$/);
                 if (parseInt(idnr) > parseInt(suffixInt)){
                     suffixInt= idnr;
                 }
@@ -2353,7 +2220,7 @@ $(document).ready(function () {
             var $repeatedSections = $("." + _id);
             var suffixInt=0;
             $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
+                var idnr = $(repeatedSection).attr("data-name").match(/\d+$/);
                 if (parseInt(idnr) > parseInt(suffixInt)){
                     suffixInt= idnr;
                 }
@@ -2399,7 +2266,7 @@ $(document).ready(function () {
             var $repeatedSections = $("." + _id);
             var suffixInt=0;
             $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
+                var idnr = $(repeatedSection).attr("data-name").match(/\d+$/);
                 if (parseInt(idnr) > parseInt(suffixInt)){
                     suffixInt= idnr;
                 }
@@ -2476,7 +2343,7 @@ $(document).ready(function () {
             var $repeatedSections = $("." + _id);
             var suffixInt=0;
             $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
+                var idnr = $(repeatedSection).attr("data-name").match(/\d+$/);
                 if (parseInt(idnr) > parseInt(suffixInt)){
                     suffixInt= idnr;
                 }
@@ -2542,12 +2409,6 @@ $(document).ready(function () {
             $(object).change(function () {
                 $("#obs\\.time_to_medication_place_DK").prop('checked', false);
                 $("#obs\\.time_to_medication_place_RF").prop('checked', false);
-                if($("#obs\\.time_to_medication_place_hours").val() >0){
-                    $('#obs\\.time_to_medication_place').val($("#obs\\.time_to_medication_place_hours").val()*60);
-                    if($("#obs\\.time_to_medication_place_mins").val()>0){
-                        $('#obs\\.time_to_medication_place').val(($("#obs\\.time_to_medication_place_hours").val()*60)+ (parseInt($("#obs\\.time_to_medication_place_mins").val())));
-                    }
-                }
 
             });
             $(object).trigger('change');
@@ -2561,12 +2422,6 @@ $(document).ready(function () {
             $(object).change(function () {
                 $("#obs\\.time_to_medication_place_DK").prop('checked', false);
                 $("#obs\\.time_to_medication_place_RF").prop('checked', false);
-                if($("#obs\\.time_to_medication_place_mins").val() >0){
-                    $('#obs\\.time_to_medication_place').val(parseInt($("#obs\\.time_to_medication_place_mins").val()));
-                    if($("#obs\\.time_to_medication_place_hours").val()>0){
-                        $('#obs\\.time_to_medication_place').val(($("#obs\\.time_to_medication_place_hours").val()*60)+ (parseInt($("#obs\\.time_to_medication_place_mins").val())));
-                    }
-                }
             });
             $(object).trigger('change');
         });
@@ -2576,17 +2431,12 @@ $(document).ready(function () {
     //hide show time
     var resetTimeTMToHosp = function () {
         if($("#obs\\.time_to_medication_place_DK").is(':checked')|| $("#obs\\.time_to_medication_place_RF").is(':checked')) {
-            $("#obs\\.time_to_medication_place_hours").get(0).selectedIndex = 1;
-            $("#obs\\.time_to_medication_place_mins").get(0).selectedIndex = 1;
-            if($("#obs\\.time_to_medication_place_DK").is(':checked')){
-                $('#obs\\.time_to_medication_place').val(77);
-            } else{
-                $('#obs\\.time_to_medication_place').val(99);
-            }
+            $("#obs\\.time_to_medication_place_hours").get(0).selectedIndex = 0;
+            $("#obs\\.time_to_medication_place_mins").get(0).selectedIndex = 0;
         }
     } ;
     resetTimeTMToHosp();
-    $('input[name="obs\\.time_to_medication_placeDR"]').change(function () {
+    $('input[name="obs.time_to_medication_placeDR"]').change(function () {
         resetTimeTMToHosp();
 
     });
@@ -2650,7 +2500,6 @@ $(document).ready(function () {
             $(object).change(function () {
                 $("#obs\\.time_to_herbalist_RF").prop('checked', false);
                 $("#obs\\.time_to_herbalist_DK").prop('checked', false);
-
             });
             $(object).trigger('change');
         });
@@ -2663,76 +2512,20 @@ $(document).ready(function () {
             $(object).change(function () {
                 $("#obs\\.time_to_herbalist_RF").prop('checked', false);
                 $("#obs\\.time_to_herbalist_DK").prop('checked', false);
-                if($("#obs\\.time_to_herbalist_hours").val() >0){
-                    $('#obs\\.time_to_herbalist').val($("#obs\\.time_to_herbalist_hours").val()*60);
-                    if($("#obs\\.time_to_herbalist_mins").val()>0){
-                        $('#obs\\.time_to_herbalist').val(($("#obs\\.time_to_herbalist_hours").val()*60)+ (parseInt($("#obs\\.time_to_herbalist_mins").val())));
-                    }
-                }
             });
             $(object).trigger('change');
         });
     };
     uncheckHVDRM();
-
-    var uncheckHVDRHours = function (selectedElement) {
-        var divField = $("select[name='obs\\.time_to_herbalist_hours']");
-        $.each(divField, function (index, object) {
-            $(object).change(function () {
-                $("#obs\\.time_to_herbalist_RF").prop('checked', false);
-                $("#obs\\.time_to_herbalist_DK").prop('checked', false);
-                if($("#obs\\.time_to_herbalist_hours").val() >0){
-                    $('#obs\\.time_to_herbalist').val($("#obs\\.time_to_herbalist_hours").val()*60);
-                    if($("#obs\\.time_to_herbalist_mins").val()>0){
-                        $('#obs\\.time_to_herbalist').val(($("#obs\\.time_to_herbalist_hours").val()*60)+ (parseInt($("#obs\\.time_to_herbalist_mins").val())));
-                    }
-                }
-            });
-            $(object).trigger('change');
-        });
-    };
-    uncheckHVDRHours();
-
-    var uncheckHVDRMins = function (selectedElement) {
-        var divField = $("select[name='obs\\.time_to_herbalist_mins']");
-        $.each(divField, function (index, object) {
-            $(object).change(function () {
-                $("#obs\\.time_to_herbalist_RF").prop('checked', false);
-                $("#obs\\.time_to_herbalist_DK").prop('checked', false);
-                if($("#obs\\.time_to_herbalist_mins").val()>0){
-                    $('#obs\\.time_to_herbalist').val($("#obs\\.time_to_herbalist_mins").val());
-                    if($("#obs\\.time_to_herbalist_hours").val()>0){
-                        $('#obs\\.time_to_herbalist').val(($("#obs\\.time_to_herbalist_hours").val()*60)+ (parseInt($("#obs\\.time_to_herbalist_mins").val())));
-                    }
-                }
-            });
-            $(object).trigger('change');
-        });
-    };
-    uncheckHVDRMins();
-
-
     //hide show time
     var resetTimeToHerbalist= function () {
         if($("#obs\\.time_to_herbalist_DK").is(':checked')|| $("#obs\\.time_to_herbalist_RF").is(':checked')) {
-            $("#obs\\.time_to_herbalist_hours").get(0).selectedIndex = 1;
-            $("#obs\\.time_to_herbalist_mins").get(0).selectedIndex = 1;
-            if($("#obs\\.time_to_herbalist_mins").val() >0){
-                $('#obs\\.time_to_herbalist').val($("#obs\\.time_to_herbalist_mins").val());
-                if($("#obs\\.time_to_herbalist_hours").val()>0){
-                    $('#obs\\.time_to_herbalist').val(($("#obs\\.time_to_herbalist_hours").val()*60)+ (parseInt($("#obs\\.time_to_herbalist_mins").val())));
-                }
-            }
-
-            if($("#obs\\.time_to_herbalist_DK").is(':checked')){
-                $('#obs\\.time_to_herbalist').val(77);
-            } else{
-                $('#obs\\.time_to_herbalist').val(99);
-            }
+            $("#obs\\.time_to_herbalist_hours").get(0).selectedIndex = 0;
+            $("#obs\\.time_to_herbalist_mins").get(0).selectedIndex = 0;
         }
     } ;
     resetTimeToHerbalist();
-    $('input[name="obs\\.time_to_herbalistDR"]').change(function () {
+    $('input[name="obs.time_to_herbalistDR"]').change(function () {
         resetTimeToHerbalist();
 
     });
@@ -2803,7 +2596,7 @@ $(document).ready(function () {
             var $repeatedSections = $("." + _id);
             var suffixInt=0;
             $.each($repeatedSections, function (i, repeatedSection) {
-                var idnr = $(repeatedSection).attr("data-name").match(/d+$/);
+                var idnr = $(repeatedSection).attr("data-name").match(/\d+$/);
                 if (parseInt(idnr) > parseInt(suffixInt)){
                     suffixInt= idnr;
                 }
@@ -2838,9 +2631,9 @@ $(document).ready(function () {
                 $("#time_doing_vigorous_physical_DK").prop('checked', false);
                 $("#time_doing_vigorous_physical_RF").prop('checked', false);
                 if($("#obs\\.time_doing_vigorous_physical_hours").val() >0){
-                    $('#obs\\.time_doing_vigorous_physical').val($("#obs\\.time_doing_vigorous_physical_hours").val()*60);
+                    $('input[name="obs.time_doing_vigorous_physical"]').attr('value',($("#obs\\.time_doing_vigorous_physical_hours").val()*60));
                     if($("#obs\\.time_doing_vigorous_physical_mins").val()>0){
-                        $('#obs\\.time_doing_vigorous_physical').val(($("#obs\\.time_doing_vigorous_physical_hours").val()*60)+ (parseInt($("#obs\\.time_doing_vigorous_physical_mins").val())));
+                        $('input[name="obs.time_doing_vigorous_physical"]').attr('value',($("#obs\\.time_doing_vigorous_physical_hours").val()*60)+($("#obs\\.time_doing_vigorous_physical_mins").val()));
                     }
                 }
             });
@@ -2858,9 +2651,9 @@ $(document).ready(function () {
                 $("#time_doing_vigorous_physical_DK").prop('checked', false);
                 $("#time_doing_vigorous_physical_RF").prop('checked', false);
                 if($("#obs\\.time_doing_vigorous_physical_mins").val() >0){
-                    $('#obs\\.time_doing_vigorous_physical').val($("#obs\\.time_doing_vigorous_physical_mins").val());
+                    $('input[name="obs.time_doing_vigorous_physical"]').attr('value',($("#obs\\.time_doing_vigorous_physical_mins").val()*60));
                     if($("#obs\\.time_doing_vigorous_physical_hours").val()>0){
-                        $('#obs\\.time_doing_vigorous_physical').val(($("#obs\\.time_doing_vigorous_physical_hours").val()*60)+ (parseInt($("#obs\\.time_doing_vigorous_physical_mins").val())));
+                        $('input[name="obs.time_doing_vigorous_physical"]').attr('value',($("#obs\\.time_doing_vigorous_physical_hours").val()*60)+($("#obs\\.time_doing_vigorous_physical_mins").val()));
                     }
                 }
             });
@@ -2868,15 +2661,34 @@ $(document).ready(function () {
         });
     };
     uncheckPAM();
+    var uncheckPARH = function (selectedElement) {
+        var divField = $("select[name='obs\\.time_doing_vigorous_physical_hours']");
+        $.each(divField, function (index, object) {
+            $(object).change(function () {
+                $("#time_doing_vigorous_physical_RF").prop('checked', false);
+                $("#time_doing_vigorous_physical_DK").prop('checked', false);
+            });
+            $(object).trigger('change');
+        });
+    };
+    uncheckPARH();
+
+    var uncheckPARM = function (selectedElement) {
+        var divField = $("select[name='obs\\.time_doing_vigorous_physical_mins']");
+        $.each(divField, function (index, object) {
+            $(object).change(function () {
+                $("#time_doing_vigorous_physical_RF").prop('checked', false);
+                $("#time_doing_vigorous_physical_DK").prop('checked', false);
+            });
+            $(object).trigger('change');
+        });
+    };
+    uncheckPARM();
+
     var resetTimePA= function () {
         if($("#time_doing_vigorous_physical_RF").is(':checked')|| $("#time_doing_vigorous_physical_DK").is(':checked')) {
             $("#obs\\.time_doing_vigorous_physical_hours").get(0).selectedIndex = 1;
             $("#obs\\.time_doing_vigorous_physical_mins").get(0).selectedIndex = 1;
-            if($("#time_doing_vigorous_physical_DK").is(':checked')){
-                $('#obs\\.time_doing_vigorous_physical').val(77);
-            } else{
-                $('#obs\\.time_doing_vigorous_physical').val(99);
-            }
         }
     } ;
     resetTimePA();
@@ -2923,9 +2735,9 @@ $(document).ready(function () {
                 $("#time_doing_moderate_physical_DK").prop('checked', false);
                 $("#time_doing_moderate_physical_RF").prop('checked', false);
                 if($("#obs\\.time_doing_moderate_physical_hours").val() >0){
-                    $('#obs\\.time_doing_moderate_physical').val($("#obs\\.time_doing_moderate_physical_hours").val()*60);
-                    if($("#obs\\.time_doing_moderate_physical_mins").val()>0){
-                        $('#obs\\.time_doing_moderate_physical').val(($("#obs\\.time_doing_moderate_physical_hours").val()*60)+ (parseInt($("#obs\\.time_doing_moderate_physical_mins").val())));
+                    $('input[name="obs.time_doing_moderate_physical"]').attr('value',($("#obs\\.time_doing_moderate_physical_hours").val()*60));
+                    if($("#obs\\.time_doing_moderate_physica_mins").val()>0){
+                        $('input[name="obs.time_doing_moderate_physical"]').attr('value',($("#obs\\.time_doing_moderate_physical_hours").val()*60)+($("#obs\\.time_doing_moderate_physical_mins").val()));
                     }
                 }
             });
@@ -2941,9 +2753,9 @@ $(document).ready(function () {
                 $("#time_doing_moderate_physical_DK").prop('checked', false);
                 $("#time_doing_moderate_physical_RF").prop('checked', false);
                 if($("#obs\\.time_doing_moderate_physical_mins").val() >0){
-                    $('#obs\\.time_doing_moderate_physical').val($("#obs\\.time_doing_moderate_physical_hours").val());
+                    $('input[name="obs.time_doing_moderate_physical"]').attr('value',($("#obs\\.time_doing_moderate_physical_mins").val()*60));
                     if($("#obs\\.time_doing_moderate_physical_hours").val()>0){
-                        $('#obs\\.time_doing_moderate_physical').val(($("#obs\\.time_doing_moderate_physical_hours").val()*60)+ (parseInt($("#obs\\.time_doing_moderate_physical_mins").val())));
+                        $('input[name="obs.time_doing_moderate_physical"]').attr('value',($("#obs\\.time_doing_moderate_physical_hours").val()*60)+($("#obs\\.time_doing_moderate_physical_mins").val()));
                     }
                 }
             });
@@ -2957,12 +2769,6 @@ $(document).ready(function () {
             $(object).change(function () {
                 $("#time_doing_moderate_physical_RF").prop('checked', false);
                 $("#time_doing_moderate_physical_DK").prop('checked', false);
-                if($("#obs\\.time_doing_moderate_physical_mins").val() >0){
-                    $('#obs\\.time_doing_moderate_physical').val($("#obs\\.time_doing_moderate_physical_hours").val()*60);
-                    if($("#obs\\.time_doing_moderate_physical_hours").val()>0){
-                        $('#obs\\.time_doing_moderate_physical').val(($("#obs\\.time_doing_moderate_physical_hours").val()*60)+ (parseInt($("#obs\\.time_doing_moderate_physical_mins").val())));
-                    }
-                }
             });
             $(object).trigger('change');
         });
@@ -2985,11 +2791,6 @@ $(document).ready(function () {
         if($("#time_doing_moderate_physical_RF").is(':checked')|| $("#time_doing_moderate_physical_DK").is(':checked')) {
             $("#obs\\.time_doing_moderate_physical_hours").get(0).selectedIndex = 1;
             $("#obs\\.time_doing_moderate_physical_mins").get(0).selectedIndex = 1;
-            if($("#time_doing_moderate_physical_DK").is(':checked')){
-                $('#obs\\.time_doing_moderate_physical').val(77);
-            } else{
-                $('#obs\\.time_doing_moderate_physical').val(99);
-            }
         }
     } ;
     resetTimeModerate();
@@ -3052,7 +2853,7 @@ $(document).ready(function () {
                 var divToShowVal = $(this).val();
                 var $divToShow = $(this).closest('.section').find('.earningDisplay');
                 var $divToShowTwo = $(this).closest('.section').find('.daysMissedWorkDisplay');
-                if (divToShowVal  == '1'|| divToShowVal  == '') {
+                if (divToShowVal  == '1'|| divToShowVal  == '6'|| divToShowVal  == '') {
                     $divToShow.hide();
                     $divToShowTwo.hide();
                 } else {
@@ -3123,11 +2924,10 @@ $(document).ready(function () {
             $(object).change(function () {
                 $("#hours_attended_work_DK").prop('checked', false);
                 $("#hours_attended_work_RF").prop('checked', false);
-
                 if($("#obs\\.hours_attended_work_hours").val() >0){
-                    $('#obs\\.hours_attended_work').val($("#obs\\.hours_attended_work_hours").val()*60);
+                    $('input[name="obs.hours_attended_work"]').attr('value',($("#obs\\.hours_attended_work_hours").val()*60));
                     if($("#obs\\.hours_attended_work_mins").val()>0){
-                        $('#obs\\.hours_attended_work').val(($("#obs\\.hours_attended_work_hours").val()*60)+ (parseInt($("#obs\\.hours_attended_work_mins").val())));
+                        $('input[name="obs.hours_attended_work"]').attr('value',($("#obs\\.hours_attended_work").val()*60)+($("#obs\\.hours_attended_work_mins").val()));
                     }
                 }
             });
@@ -3144,11 +2944,10 @@ $(document).ready(function () {
             $(object).change(function () {
                 $("#hours_attended_work_DK").prop('checked', false);
                 $("#hours_attended_work_RF").prop('checked', false);
-
                 if($("#obs\\.hours_attended_work_mins").val() >0){
-                    $('#obs\\.hours_attended_work').val($("#obs\\.hours_attended_work_hours").val()*60);
+                    $('input[name="obs.hours_attended_work"]').attr('value',($("#obs\\.hours_attended_work_mins").val()*60));
                     if($("#obs\\.hours_attended_work_hours").val()>0){
-                        $('#obs\\.hours_attended_work').val(($("#obs\\.hours_attended_work").val()*60)+ (parseInt($("#obs\\.hours_attended_work_mins").val())));
+                        $('input[name="obs.hours_attended_work"]').attr('value',($("#obs\\.hours_attended_work_hours").val()*60)+($("#obs\\.hours_attended_work_mins").val()));
                     }
                 }
             });
@@ -3200,7 +2999,7 @@ $(document).ready(function () {
     //pick todays date by default
     var dateFormat = "dd-mm-yy";
     var currentDate = $.datepicker.formatDate(dateFormat, new Date());
-    var encounterDatetime = $('#encounter.encounter_datetime');
+    var encounterDatetime = $('#encounter\\.encounter_datetime');
     if ($(encounterDatetime).val() == "") {
         $(encounterDatetime).val(currentDate);
     }
