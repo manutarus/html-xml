@@ -236,91 +236,218 @@
 
 <div class="section">
 <h3><div style="text-align: center;">Have you ever been told that you need to do any of the following</div> </h3>
+<div class="form-group">
+    <span><strong>Come to the clinic regularly to monitor your blood pressure<span class="required">*</span></strong></span>
+
+    <fieldset name="9098^REGULAR CLINIC VISITS TO MONITOR BLOOD PRESSURE^99DCT">
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="regularly_to_monitor_bp" id="regularly_to_monitor_bp_yes" type="radio"
+                       data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="9098^REGULAR CLINIC VISITS TO MONITOR BLOOD PRESSURE^99DCT">
+                Yes
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="regularly_to_monitor_bp" id="regularly_to_monitor_bp_no" type="radio"
+                       data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="9098^REGULAR CLINIC VISITS TO MONITOR BLOOD PRESSURE^99DCT">
+                No
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="regularly_to_monitor_bp" id="regularly_to_monitor_bp_na" type="radio"
+                       data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="9098^REGULAR CLINIC VISITS TO MONITOR BLOOD PRESSURE^99DCT">
+                Refused/No Answer
+            </label>
+        </div>
+    </fieldset>
+</div>
 
 <div class="form-group">
-    <label for="obs.means_to_usual_health_facility">
-        Come to the clinic regularly to monitor your blood pressure <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.regularly_monitor_pb" name="obs.regularly_monitor_pb"
-            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKINGY^99DCT">Yes</option>
-        <option value="6395^BICYCLE^99DCT">No</option>
-        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
-    </select>
+    <span><strong>Take medication to manage your high blood pressure<span class="required">*</span></strong></span>
+
+    <fieldset name="7333^HYPERTENSION TREATMENT PLAN^99DCT">
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="take_medication_to_manage" id="take_medication_to_manage_bp_yes" type="radio"
+                       data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7333^HYPERTENSION TREATMENT PLAN^99DCT">
+                Yes
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="take_medication_to_manage" id="take_medication_to_manage_bp_no" type="radio"
+                       data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7333^HYPERTENSION TREATMENT PLAN^99DCT">
+                No
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="take_medication_to_manage" id="take_medication_to_manage_bp_na" type="radio"
+                       data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7333^HYPERTENSION TREATMENT PLAN^99DCT">
+                Refused/No Answer
+            </label>
+        </div>
+    </fieldset>
 </div>
 <div class="form-group">
-    <label for="obs.means_to_usual_health_facility">
-        Take medication to manage your high blood pressure <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.high_blood_medication" name="obs.high_blood_medication"
-            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKINGY^99DCT">Yes</option>
-        <option value="6395^BICYCLE^99DCT">No</option>
-        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
-    </select>
+    <span><strong>Control your weight<span class="required">*</span></strong></span>
+
+    <fieldset name="9099^CONTROL WEIGHT^99DCT">
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="control_your_weight" id="control_your_weight_yes" type="radio"
+                       data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="9099^CONTROL WEIGHT^99DCT">
+                Yes
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="control_your_weight" id="control_your_weight_no" type="radio"
+                       data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="9099^CONTROL WEIGHT^99DCT">
+                No
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="control_your_weight" id="control_your_weight_na" type="radio"
+                       data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="9099^CONTROL WEIGHT^99DCT">
+                Refused/No Answer
+            </label>
+        </div>
+    </fieldset>
 </div>
 <div class="form-group">
-    <label for="obs.means_to_usual_health_facility">
-        Control your weight <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.control_your_weight" name="obs.control_your_weight"
-            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKINGY^99DCT">Yes</option>
-        <option value="6395^BICYCLE^99DCT">No</option>
-        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
-    </select>
+    <span><strong>Reduce your salt intake<span class="required">*</span></strong></span>
+
+    <fieldset name="7053^SALT REDUCTION^99DCT">
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="reduce_your_salt" id="reduce your salt_yes" type="radio"
+                       data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7053^SALT REDUCTION^99DCT">
+                Yes
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="reduce_your_salt" id="reduce your salt_no" type="radio"
+                       data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7053^SALT REDUCTION^99DCT">
+                No
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="reduce_your_salt" id="reduce your salt_na" type="radio"
+                       data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7053^SALT REDUCTION^99DCT">
+                Refused/No Answer
+            </label>
+        </div>
+    </fieldset>
 </div>
 <div class="form-group">
-    <label for="obs.means_to_usual_health_facility">
-        Reduce your salt intake <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.reduce_your_salt_intake" name="obs.reduce_your_salt_intake"
-            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKINGY^99DCT">Yes</option>
-        <option value="6395^BICYCLE^99DCT">No</option>
-        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
-    </select>
+    <span><strong>Exercise more<span class="required">*</span></strong></span>
+
+    <fieldset name="7053^SALT REDUCTION^99DCT">
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="exercise_more" id="exercise_more_yes" type="radio"
+                       data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^EXERCISE^99DCT">
+                Yes
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="exercise_more" id="exercise_more_no" type="radio"
+                       data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^EXERCISE^99DCT">
+                No
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="exercise_more" id="exercise_more_na" type="radio"
+                       data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^EXERCISE^99DCT">
+                Refused/No Answer
+            </label>
+        </div>
+    </fieldset>
 </div>
 <div class="form-group">
-    <label for="obs.means_to_usual_health_facility">
-        Exercise more <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.exercise_more" name="obs.exercise_more"
-            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKINGY^99DCT">Yes</option>
-        <option value="6395^BICYCLE^99DCT">No</option>
-        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
-    </select>
+    <span><strong>Reduce your alcohol use<span class="required">*</span></strong></span>
+
+    <fieldset name="7053^SALT REDUCTION^99DCT">
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="reduce_your_alcohol" id="reduce_your_alcohol_yes" type="radio"
+                       data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^EXERCISE^99DCT">
+                Yes
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="reduce_your_alcohol" id="reduce_your_alcohol_no" type="radio"
+                       data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^EXERCISE^99DCT">
+                No
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="reduce_your_alcohol" id="reduce_your_alcohol_na" type="radio"
+                       data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^EXERCISE^99DCT">
+                Refused/No Answer
+            </label>
+        </div>
+    </fieldset>
 </div>
 <div class="form-group">
-    <label for="obs.means_to_usual_health_facility">
-        Reduce your alcohol use <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.reduce_your_alcohol_use" name="obs.reduce_your_alcohol_use"
-            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKINGY^99DCT">Yes</option>
-        <option value="6395^BICYCLE^99DCT">No</option>
-        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
-    </select>
+    <span><strong>Stop smoking or use of tobacco<span class="required">*</span></strong></span>
+
+    <fieldset name="7053^SALT REDUCTION^99DCT">
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="stop_smoking_tobacco" id="stop_smoking_tobacco_yes" type="radio"
+                       data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^SMOKING CESSATION^99DCT">
+                Yes
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="stop_smoking_tobacco" id="stop_smoking_tobacco_no" type="radio"
+                       data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^SMOKING CESSATION^99DCT">
+                No
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="font-normal">
+                <input name="stop_smoking_tobacco" id="stop_smoking_tobacco_na" type="radio"
+                       data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
+                       value="7055^SMOKING CESSATION^99DCT">
+                Refused/No Answer
+            </label>
+        </div>
+    </fieldset>
 </div>
-<div class="form-group">
-    <label for="obs.means_to_usual_health_facility">
-        Stop smoking or use of tobacco <span class="required">*</span>
-    </label>
-    <select class="form-control" id="obs.smoking_tobacco" name="obs.smoking_tobacco"
-            data-concept="6468^MODE OF TRANSPORTATION TO CLINIC^99DCT" required="required">
-        <option value="">...</option>
-        <option value="6415^WALKINGY^99DCT">Yes</option>
-        <option value="6395^BICYCLE^99DCT">No</option>
-        <option value="6396^MOTORCYCLE^99DCT">Refused/No Answer</option>
-    </select>
-</div>
+
 
 <div class="form-group">
     <label for="obs.means_to_usual_health_facility">
@@ -898,7 +1025,6 @@
 <div class="section">
 
     <h4>Based on the combination of participant responses, the following messages are recommended to be shown. You can choose which ones to show:</h4>
-    <!--<input class="btn video-player" id="vidOne" data-video = "/lark/vids/v1.mp4" type="button" value="play video"/>-->
 
     <label class="alert alert-info" id="message1">
         What is high blood pressure?
@@ -929,10 +1055,31 @@
     </label> <br>
 
     <label class="alert alert-info" id="message3">
-        <span style="text-decoration: underline;">Signs and Symptoms of Hypertension</span>  <br>
-        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/vids/message3.mp4" type="button" value="show vedio"/>
+        <span style="text-decoration: underline;">Signs and Symptoms of Hypertension</span>  </p>
+        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/vids/message3.mp4" type="button" value="show video"/>
     </label>
 
+    <label class="alert alert-info" id="message7">
+        <span style="text-decoration: underline;">Complication of Hypertension</span>  </p>
+        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/vids/message7.mp4" type="button" value="show video"/>
+    </label>
+    <label class="alert alert-info" id="message10">
+        <span style="text-decoration: underline;">Cost Effectiveness of Early Intervention</span>  </p>
+        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/vids/message10.mp4" type="button" value="show video"/>
+    </label>
+
+    <label class="alert alert-info" id="message5">
+        <span style="text-decoration: underline;">Drug Management of Hypertension</span>
+        <br>
+        High blood pressure medications work by lowering your blood pressure to a range that does not harm your body.<br>
+        Your blood pressure medication will help you stay healthy and reduce your risks of complications. <br>
+        <span style="text-decoration: underline;">What can you do?</span>
+        <ol type="I">
+            <li>Take your drugs as prescribed by your Health Care Providers</li>
+            <li>Adhere to your routine appointments for monitoring of blood pressure</li>
+        </ol>
+        <input class="btn image-player" data-image = "/media/manu/PBR_DRV/lark/media/img/message5.jpg" type="button" value="show image"/>
+    </label>
 </div>
 
 
@@ -1051,6 +1198,7 @@
         });
         $NotYesSelect.trigger('change');
         var $having_hypertension = $('#obs\\.having_hypertension');
+        var $perception_of_bp = $('#obs\\.perception_of_bp');
         //CombinationOne display message 1,2 & 3.
         var combinationOne = function () {
             var having_hypertension = $having_hypertension.val();
@@ -1068,6 +1216,82 @@
         $having_hypertension.change(function () {
             combinationOne();
         });$having_hypertension.trigger('change');
+
+//        combinationTwo
+        var combinationTwo = function () {
+            var perception_of_bp= $perception_of_bp.val();
+            if (perception_of_bp == '9096^NOT SERIOUS^99DCT')
+            {
+                $('#message1').show();
+                $('#message2').show();
+                $('#message7').show();
+
+            } else {
+                $('#message1').hide();
+                $('#message2').hide();
+                $('#message7').hide();
+                combinationOne();
+            }
+        };combinationTwo();
+        $perception_of_bp.change(function () {
+            combinationTwo();
+        });$perception_of_bp.trigger('change');
+
+        var combinationThree  = function () {
+            var msgArray = {
+                "#regularly_to_monitor_bp_yes": "exclude",
+                "#regularly_to_monitor_bp_no": "",
+                "#regularly_to_monitor_bp_na": ""
+            };
+            var having_hypertension = $having_hypertension.val();
+            $.each(msgArray, function (index,value) {
+                $(index).change(function () {
+                    if (($(index).is(':checked'))) {
+                        if(value !='exclude'){
+                            $('#message3').show();
+                            $('#message10').show();
+                        } else{
+                            if (having_hypertension == '1065^YES^99DCT' || having_hypertension == ''){
+                                $('#message3').hide();
+                                $('#message10').hide();
+                            }  else{
+                                $('#message10').hide();
+                            }
+                        }
+                    } else {
+                        if (having_hypertension == '1065^YES^99DCT' || having_hypertension == ''){
+                            $('#message3').hide();
+                            $('#message10').hide();
+                        }  else{
+                            $('#message10').hide();
+                        }
+                    }
+                });
+                $(index).trigger('change');
+            })
+        };combinationThree();
+        var combinationFour  = function () {
+            var msgArray = {
+                "#take_medication_to_manage_bp_yes": "exclude",
+                "#take_medication_to_manage_bp_no": "",
+                "#take_medication_to_manage_bp_na": ""
+            };
+            $.each(msgArray, function (index,value) {
+                $(index).change(function () {
+                    if (($(index).is(':checked'))) {
+                        if(value !='exclude'){
+                            $('#message5').show();
+                        } else{
+                            $('#message5').hide();
+                        }
+                    } else {
+                        $('#message5').hide();
+
+                    }
+                });
+                $(index).trigger('change');
+            })
+        };combinationFour();
 
     });
 </script>
