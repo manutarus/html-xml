@@ -333,7 +333,7 @@
     <fieldset name="7053^SALT REDUCTION^99DCT">
         <div class="form-group">
             <label class="font-normal">
-                <input name="reduce_your_salt" id="reduce your salt_yes" type="radio"
+                <input name="reduce_your_salt" id="reduce_your_salt_yes" type="radio"
                        data-concept="9101^INFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
                        value="7053^SALT REDUCTION^99DCT">
                 Yes
@@ -341,7 +341,7 @@
         </div>
         <div class="form-group">
             <label class="font-normal">
-                <input name="reduce_your_salt" id="reduce your salt_no" type="radio"
+                <input name="reduce_your_salt" id="reduce_your_salt_no" type="radio"
                        data-concept="9102^UNINFORMED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
                        value="7053^SALT REDUCTION^99DCT">
                 No
@@ -349,7 +349,7 @@
         </div>
         <div class="form-group">
             <label class="font-normal">
-                <input name="reduce_your_salt" id="reduce your salt_na" type="radio"
+                <input name="reduce_your_salt" id="reduce_your_salt_na" type="radio"
                        data-concept="9103^UNANSWERED HIGH BLOOD PRESSURE MANAGEMENT^99DCT"
                        value="7053^SALT REDUCTION^99DCT">
                 Refused/No Answer
@@ -704,7 +704,7 @@
     <label for="obs.means_to_usual_health_facility">
         Missed your blood pressure appointment because you felt well? <span class="required">*</span>
     </label>
-    <select class="form-control" id="obs.blood_pressure_missed" name="obs.blood_pressure_missed"
+    <select class="form-control" id="blood_pressure_missed" name="blood_pressure_missed"
             data-concept="1733^REASON FOR MISSED VISIT^99DCT" required="required">
         <option value="">...</option>
         <option value="9070^IN GOOD HEALTH^99DCT">Yes</option>
@@ -716,7 +716,7 @@
     <label for="obs.means_to_usual_health_facility">
         Missed taking your blood pressure drugs when you were feeling better <span class="required">*</span>
     </label>
-    <select class="form-control" id="obs.blood_pressure_better" name="obs.blood_pressure_better"
+    <select class="form-control" id="blood_pressure_better" name="blood_pressure_better"
             data-concept="1668^MISSED MEDICATION REASON^99DCT" required="required">
         <option value="">...</option>
         <option value="1647^FELT WELL AND DID NOT THINK TAKING MEDICINIE WAS NEEDED^99DCT">Yes</option>
@@ -1652,7 +1652,7 @@
             <li>High blood pressure runs in the immediate family.</li>
         </ul>
 
-        <input class="btn image-player" data-image = "/media/img/message2.jpg" type="button" value="show image"/>
+        <input class="btn image-player" data-image = "media/img/message2.jpg" type="button" value="show image"/>
     </label> <br>
 
     <label class="alert alert-info" id="message3">
@@ -1684,6 +1684,11 @@
     <label class="alert alert-info" id="message4">
         <span style="text-decoration: underline;">Lifestyle Management of Hypertension</span>  </p>
         <input class="btn video-player" data-video = "/media/vids/message4.mp4" type="button" value="show video"/>
+    </label>
+
+    <label class="alert alert-info" id="message8">
+        <span style="text-decoration: underline;"> Stroke/Consequences of Medication Default</span>  </p>
+        <input class="btn video-player" data-video = "/media/vids/message8.mp4" type="button" value="show video"/>
     </label>
 </div>
 
@@ -1904,7 +1909,29 @@
                 "#take_medication_to_manage_bp_na": "",
                 "#control_your_weight_yes": "exclude",
                 "#control_your_weight_no": "",
-                "#control_your_weight_na": ""
+                "#control_your_weight_na": "",
+                "#reduce_your_salt_yes": "exclude",
+                "#reduce_your_salt_no": "",
+                "#reduce_your_salt_na": "",
+                "#exercise_more_yes": "exclude",
+                "#exercise_more_no": "",
+                "#exercise_more_na": "",
+                "#stop_smoking_tobacco_yes": "exclude",
+                "#stop_smoking_tobacco_no": "",
+                "#stop_smoking_tobacco_na": "" ,
+                "#reducing_tobacco_use_yes": "exclude",
+                "#reducing_tobacco_use_no": "",
+                "#reducing_tobacco_use_na": "",
+                "#reducing_your_salt_intake_yes": "exclude",
+                "#reducing_your_salt_intake_no": "",
+                "#reducing_your_salt_intake_na": "",
+                "#exercising_more_yes": "exclude",
+                "#exercising_more_no": "",
+                "#exercising_more_na": "",
+                "#reducing_your_alcohol_yes": "exclude",
+                "#reducing_your_alcohol_no": "",
+                "#reducing_your_alcohol_na": ""
+
             };
             $.each(msgArray, function (index,value) {
                 $(index).change(function () {
@@ -1913,7 +1940,15 @@
                             $('#message4').show();
                         } else{
                             if($('#take_medication_to_manage_bp_no').is(':checked')||$('#take_medication_to_manage_bp_na').is(':checked') ||
-                                $('#control_your_weight_no').is(':checked')||$('#control_your_weight_na').is(':checked')) {
+                                $('#control_your_weight_no').is(':checked')||$('#control_your_weight_na').is(':checked')||
+                                $('#reduce_your_salt_no').is(':checked')||$('#reduce_your_salt_na').is(':checked') ||
+                                $('#exercise_more_no').is(':checked')||$('#exercise_more_na').is(':checked') ||
+                                $('#stop_smoking_tobacco_no').is(':checked')||$('#stop_smoking_tobacco_na').is(':checked')||
+                                $('#reducing_tobacco_use_no').is(':checked')||$('#reducing_tobacco_use_na').is(':checked')||
+                                $('#reducing_your_salt_intake_no').is(':checked')||$('#reducing_your_salt_intake_na').is(':checked') ||
+                                $('#exercising_more_no').is(':checked')||$('#exercising_more_na').is(':checked') ||
+                                $('#reducing_your_alcohol_no').is(':checked')||$('#reducing_your_alcohol_na').is(':checked')) {
+
 
                             }  else{
                                 $('#message4').hide();
@@ -1922,7 +1957,14 @@
                         }
                     } else {
                         if($('#take_medication_to_manage_bp_no').is(':checked')||$('#take_medication_to_manage_bp_na').is(':checked') ||
-                                $('#control_your_weight_no').is(':checked')||$('#control_your_weight_na').is(':checked')) {
+                                $('#control_your_weight_no').is(':checked')||$('#control_your_weight_na').is(':checked')||
+                                $('#reduce_your_salt_no').is(':checked')||$('#reduce_your_salt_na').is(':checked') ||
+                                $('#exercise_more_no').is(':checked')||$('#exercise_more_na').is(':checked') ||
+                                $('#stop_smoking_tobacco_no').is(':checked')||$('#stop_smoking_tobacco_na').is(':checked')||
+                                $('#reducing_tobacco_use_no').is(':checked')||$('#reducing_tobacco_use_na').is(':checked')||
+                                $('#reducing_your_salt_intake_no').is(':checked')||$('#reducing_your_salt_intake_na').is(':checked') ||
+                                $('#exercising_more_no').is(':checked')||$('#exercising_more_na').is(':checked') ||
+                                $('#reducing_your_alcohol_no').is(':checked')||$('#reducing_your_alcohol_na').is(':checked')){
 
                         }  else{
                             $('#message4').hide();
@@ -1933,6 +1975,28 @@
                 $(index).trigger('change');
             })
         };combinationFive();
+
+        $('#blood_pressure_missed').change(function () {
+            var having_hypertension = $having_hypertension.val();
+            if (($('#blood_pressure_missed').val() == '9070^IN GOOD HEALTH^99DCT')||
+                    ($('#blood_pressure_better').val() == '1647^FELT WELL AND DID NOT THINK TAKING MEDICINIE WAS NEEDED^99DCT')) {
+                $('#message8').show();
+                $('#message3').show();
+                $('#message5').show();
+                $('#message7').show();
+            } else {
+                if (having_hypertension == '1065^YES^99DCT' || having_hypertension == ''){
+                    $('#message3').hide();
+                }
+                $('#message8').hide();
+                $('#message5').hide();
+                $('#message7').hide();
+            }
+            combinationFour();
+            combinationTwo();
+        });
+        $('#blood_pressure_missed').trigger('change');
+
 
     });
 </script>
